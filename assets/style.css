@@ -1,0 +1,25 @@
+* {
+    
+}
+
+button {
+    width : 200rem;
+    height : 80rem;
+    border : black 5px solid;
+}
+
+#reel {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: auto;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+    height: 15%;
+    background-color: gray;
+}
