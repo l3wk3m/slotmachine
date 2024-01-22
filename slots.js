@@ -54,21 +54,13 @@ function spin(event) {
 // Win Condition Code
 
 function winCheck(event){
-    if (stopPosition[0] === stopPosition[1]) {
-        console.log('You win!');
-        credit = credit + (bet * 3);
-        document.getElementById('credit-counter').innerHTML = credit;
-    } else if (stopPosition[0] === stopPosition[2]) {
-        console.log('You win!');
-        credit = credit + (bet * 3);
-        document.getElementById('credit-counter').innerHTML = credit;
-    } else if (stopPosition[1] === stopPosition[2]) {
-        console.log('You win!');
-        credit = credit + (bet * 3);
-        document.getElementById('credit-counter').innerHTML = credit;
-    } else if (stopPosition[0] === stopPosition[1] === stopPosition[2]) {
+    if (stopPosition[0] === stopPosition[1] && stopPosition[1] === stopPosition[2]) {
         console.log('!!!YOU WIN BIG!!!');
         credit = credit + (bet * 10);
+        document.getElementById('credit-counter').innerHTML = credit;
+    } else if (stopPosition[0] === stopPosition[1] || stopPosition[1] === stopPosition[2] || stopPosition[0] === stopPosition[2]) {
+        console.log('You win!');
+        credit = credit + (bet * 3);
         document.getElementById('credit-counter').innerHTML = credit;
     } else {
         console.log('Hard luck - try again!');
