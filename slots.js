@@ -16,13 +16,26 @@ const decrement = document.getElementById('less');
 
 // Function for incrementing or decrementing the bet amount by 1 for each click of an arrow beside the counter
 function more(event) {
-    bet += 1;
-    document.getElementById('bet-tally').innerHTML = bet;
+    if (bet > (credit - 1)) {
+        alert("Your bet amount can't exceed your credits!");
+        console.log("Your bet amount can't exceed your credits!");
+    } else {
+        bet += 1;
+        document.getElementById('bet-tally').innerHTML = bet;
+    }
 }
 
+
+
 function less(event) {
-    bet -= 1;
-    document.getElementById('bet-tally').innerHTML = bet;
+    if (bet < 2) {
+        alert("You have to bet something to play!");
+        console.log("You have to bet something to play!");
+    } else {
+        bet -= 1;
+        document.getElementById('bet-tally').innerHTML = bet;
+    }
+    
 }
 
 
