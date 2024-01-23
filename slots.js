@@ -1,6 +1,7 @@
 // Declaring variables for the 'spin()' function
 let stopValue = [0, 0, 0];
 let newValue = [];
+let oldValue = [];
 const reel = ['melon', 'seven', 'cherry', 'passionfruit', 'bell', 'cherries', 'orange', 'roulette', 'lemon'];
 let stopPosition = ['???', '???', '???'];
 const iconHeight = 103;
@@ -14,9 +15,15 @@ let bet = parseInt(document.getElementById('bet-tally').innerHTML);
 const spinButton = document.getElementById('spin-button');
 const increment = document.getElementById('more');
 const decrement = document.getElementById('less');
-const reelArray = document.getElementsByClassName('reel');
+const reel1 = document.getElementById('reel1');
+const reel2 = document.getElementById('reel2');
+const reel3 = document.getElementById('reel3');
 
-console.log(reelArray);
+// Setting these three as number data types for animation purposes in the spinAnimation function
+let backgroundPositionY1 = parseFloat(reel1.style.backgroundPositionY);
+let backgroundPositionY2 = parseFloat(reel2.style.backgroundPositionY);
+let backgroundPositionY3 = parseFloat(reel3.style.backgroundPositionY);
+
 
 // Function for incrementing or decrementing the bet amount by 1 for each click of an arrow beside the counter
 function more(event) {
@@ -53,6 +60,9 @@ function wager(event) {
 // Slot machine spin result code
 
 function spin(event) {
+
+  oldValue = stopValue;
+  console.log(oldValue);
   
   for (i = 0; i < 3; i++) {
     newValue[i] = ((Math.round(Math.random() * 10)) % 9);
@@ -60,6 +70,8 @@ function spin(event) {
   }
   
   console.log(stopValue);
+
+
 
   for (i = 0; i < 3; i++) {
     stopPosition.splice(i, 1, reel[stopValue[i]]);
@@ -70,17 +82,11 @@ function spin(event) {
 
 
 // Slot machine spin animation
-let anim;
 
 function spinAnimation (event) {
-    for (i = 0; i < 3; i++) {
-        anim = reelArray[i];
-        anim.style.transition = (1000 + (i * 500));
-        anim.style.backgroundPositionY += (baseTransition * (i + 1));
+    reel1.style.transition = 1500;
+    reel1.style.backgroundPositionY = `${(baseTransition + (stopValue[i] * iconHeight))}px`;
     }
-
-    
-}
 
 // Win Condition Code
 
@@ -106,6 +112,7 @@ function loseCheck(event) {
         console.log("You've dropped into debt - GAME OVER!")
         alert("You've dropped into debt - GAME OVER!");
     }
+    //Add an addendum here to send the player to a game over screen once they lose
 }
 
 // Bet change event listeners
@@ -115,5 +122,6 @@ decrement.addEventListener('click', less);
 // Spin button event listener
 spinButton.addEventListener('click', wager);
 spinButton.addEventListener('click', spin);
+spinButton.addEventListener('click', spinAnimation);
 spinButton.addEventListener('click', winCheck);
 spinButton.addEventListener('click', loseCheck);

@@ -76,15 +76,33 @@ button {
 }
 
 #reel1 {
-    
+    height: 309px;
+    width: 90px;
+    border : black 5px solid;
+    background-image: url('../assets/images/SlotReelsMeasure.jpg');
+    overflow: hidden;
+    background-repeat: repeat-y;
+    background-position: 0 12px;
 }
 
 #reel2 {
-
+    height: 309px;
+    width: 90px;
+    border : black 5px solid;
+    background-image: url('../assets/images/SlotReelsMeasure.jpg');
+    overflow: hidden;
+    background-repeat: repeat-y;
+    background-position: 0 12px;
 }
 
 #reel3 {
-
+    height: 309px;
+    width: 90px;
+    border : black 5px solid;
+    background-image: url('../assets/images/SlotReelsMeasure.jpg');
+    overflow: hidden;
+    background-repeat: repeat-y;
+    background-position: 0 12px;
 }
 
 #bet {
