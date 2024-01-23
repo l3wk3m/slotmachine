@@ -83,8 +83,10 @@ function winCheck(event){
 function loseCheck(event) {
     if (credit === 0) {
         console.log("You're outta cash - GAME OVER!")
+        alert("You're outta cash - GAME OVER!");
     } else if (credit < 0) {
         console.log("You've dropped into debt - GAME OVER!")
+        alert("You've dropped into debt - GAME OVER!");
     }
 }
 
