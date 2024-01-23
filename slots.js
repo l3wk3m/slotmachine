@@ -3,6 +3,8 @@ let stopValue = [0, 0, 0];
 let newValue = [];
 const reel = ['melon', 'seven', 'cherry', 'passionfruit', 'bell', 'cherries', 'orange', 'roulette', 'lemon'];
 let stopPosition = ['???', '???', '???'];
+const iconHeight = 103;
+const baseTransition = iconHeight * (-18); 
 
 // Declaring variables for 'credit storage' and 'bets'
 let credit = parseInt(document.getElementById('credit-counter').innerHTML);
@@ -12,7 +14,9 @@ let bet = parseInt(document.getElementById('bet-tally').innerHTML);
 const spinButton = document.getElementById('spin-button');
 const increment = document.getElementById('more');
 const decrement = document.getElementById('less');
+const reelArray = document.getElementsByClassName('reel');
 
+console.log(reelArray);
 
 // Function for incrementing or decrementing the bet amount by 1 for each click of an arrow beside the counter
 function more(event) {
@@ -46,7 +50,7 @@ function wager(event) {
 }
 
 
-// Slot machine spin and result code
+// Slot machine spin result code
 
 function spin(event) {
   
@@ -62,6 +66,20 @@ function spin(event) {
   }
 
   console.log(stopPosition);
+}
+
+
+// Slot machine spin animation
+let anim;
+
+function spinAnimation (event) {
+    for (i = 0; i < 3; i++) {
+        anim = reelArray[i];
+        anim.style.transition = (1000 + (i * 500));
+        anim.style.backgroundPositionY += (baseTransition * (i + 1));
+    }
+
+    
 }
 
 // Win Condition Code

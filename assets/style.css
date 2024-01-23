@@ -72,6 +72,19 @@ button {
     background-image: url('../assets/images/SlotReelsMeasure.jpg');
     overflow: hidden;
     background-repeat: repeat-y;
+    background-position: 0 12px;
+}
+
+#reel1 {
+    
+}
+
+#reel2 {
+
+}
+
+#reel3 {
+
 }
 
 #bet {
