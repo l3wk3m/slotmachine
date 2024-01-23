@@ -1,7 +1,7 @@
 // Declaring variables for the 'spin()' function
 let stopValue = [0, 0, 0];
 let newValue = [];
-const reel = ['lemon', 'melon', 'seven', 'cherry', 'passionfruit', 'bell', 'cherries', 'orange', 'roulette'];
+const reel = ['melon', 'seven', 'cherry', 'passionfruit', 'bell', 'cherries', 'orange', 'roulette', 'lemon'];
 let stopPosition = ['???', '???', '???'];
 
 // Declaring variables for 'credit storage' and 'bets'
@@ -68,7 +68,7 @@ function winCheck(event){
 }
 
 function loseCheck(event) {
-    if (credit = 0) {
+    if (credit === 0) {
         console.log("You're outta cash - GAME OVER!")
     } else if (credit < 0) {
         console.log("You've dropped into debt - GAME OVER!")
