@@ -7,14 +7,9 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     font-family: "Caveat", Courier, monospace;
     color: #dad3d3;
-}
-
-button {
-    width : 200rem;
-    height : 80rem;
-    border : black 5px solid;
 }
 
 #reel {
@@ -28,9 +23,60 @@ button {
 footer {
     position: absolute;
     bottom: 0px;
-    width: 100vw;
-    height: 15%;
-    background-color: gray;
+    margin: 0;
+    border: 0;
+    padding: 1em 0;
+    background-color: #3a3a3a;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 2px 0 2px #070606;
+}
+
+#main-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+#slot-machine {
+    display: grid;
+    height: 30rem;
+    width: 30rem;
+    border: #3a3a3a 5px solid;
+    padding: 10px 0;
+}
+
+button {
+    width : 200px;
+    height : 80px;
+    border : black 5px solid;
+    align-self: end;
+    justify-self: center;
+}
+
+#reels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.reel {
+    height: 309px;
+    width: 90px;
+    border : black 5px solid;
+    background-image: url('../assets/images/SlotReelsMeasure.jpg');
+    overflow: hidden;
+    background-repeat: repeat-y;
+}
+
+#bet {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #more {

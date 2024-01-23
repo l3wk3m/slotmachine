@@ -17,13 +17,24 @@
     <title>JavaScript Slot Machine</title>
     <!-- Favicon -->
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="assets/style.css" />
   </head>
 
   <body>
-    <div id="reel"><img href="assets/images/SlotReelsMeasure.jpg" /></div>
-    <div><button type="button" id="spin-button">SPIN</button></div>
+    <div id="main-body">
+      <div id="slot-machine">
 
+        <div id="reels">
+          <div class="reel"></div>
+          <div class="reel"></div>
+          <div class="reel"></div>
+        </div>
+        
+      
+        <img href='assets/images/SlotReelsMeasure.jpg' id="reel" alt="The reel for the slot machine" />
+        <button type="button" id="spin-button">SPIN</button>
+      </div>
+    </div>
     <footer>
       <div>
         <h1 id="credit-counter">100</h1>
@@ -32,8 +43,10 @@
         <div>
           <h2 id="bet-tally">10</h2>
         </div>
-        <div id="more">More</div>
-        <div id="less">Less</div>
+        <div>
+          <div id="more">More</div>
+          <div id="less">Less</div>
+        </div>
       </div>
     </footer>
 
