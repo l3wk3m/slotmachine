@@ -5,7 +5,7 @@ let oldValue = [];
 const reel = ['melon', 'seven', 'cherry', 'passionfruit', 'bell', 'cherries', 'orange', 'roulette', 'lemon'];
 let stopPosition = ['???', '???', '???'];
 const iconHeight = 103;
-const baseTransition = iconHeight * (-18); 
+const baseTransition = iconHeight * 18;
 
 // Declaring variables for 'credit storage' and 'bets'
 let credit = parseInt(document.getElementById('credit-counter').innerHTML);
@@ -61,8 +61,9 @@ function wager(event) {
 
 function spin(event) {
 
-  oldValue = stopValue;
-  console.log(oldValue);
+  for (i = 0; i < 3; i++) (
+    oldValue[i] = stopValue[i]
+  )
   
   for (i = 0; i < 3; i++) {
     newValue[i] = ((Math.round(Math.random() * 10)) % 9);
@@ -84,9 +85,15 @@ function spin(event) {
 // Slot machine spin animation
 
 function spinAnimation (event) {
-    reel1.style.transition = 1500;
-    reel1.style.backgroundPositionY = `${(baseTransition + (stopValue[i] * iconHeight))}px`;
-    }
+  reel1.style.transition = `background-position-y 4s`;
+  reel1.style.backgroundPositionY = `${((baseTransition) + (12 + (((stopValue[0] + oldValue[0]) % 9) * iconHeight) * (-1)))}px`;
+
+  reel2.style.transition = `background-position-y 6s`;
+  reel2.style.backgroundPositionY = `${((baseTransition * 2) + (12 + (((stopValue[1] + oldValue[1]) % 9) * iconHeight) * (-1)))}px`;
+
+  reel3.style.transition = `background-position-y 8s`;
+  reel3.style.backgroundPositionY = `${((baseTransition * 4) + (12 + (((stopValue[2] + oldValue[2]) % 9) * iconHeight) * (-1)))}px`;
+  }
 
 // Win Condition Code
 
@@ -108,9 +115,11 @@ function loseCheck(event) {
     if (credit === 0) {
         console.log("You're outta cash - GAME OVER!")
         alert("You're outta cash - GAME OVER!");
+//        location.replace;
     } else if (credit < 0) {
         console.log("You've dropped into debt - GAME OVER!")
         alert("You've dropped into debt - GAME OVER!");
+//        location.replace();
     }
     //Add an addendum here to send the player to a game over screen once they lose
 }
