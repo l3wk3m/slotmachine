@@ -36,6 +36,20 @@ function more(event) {
     }
 }
 
+// Keydown version
+
+function moreKey() {
+    if (ev.key == 'ArrowUp') {
+        if (bet > (credit - 1)) {
+            alert("Your bet amount can't exceed your credits!");
+            console.log("Your bet amount can't exceed your credits!");
+        } else {
+            bet += 1;
+            document.getElementById('bet-tally').innerHTML = bet;
+        }
+    }
+}
+
 
 
 function less(event) {
@@ -46,7 +60,18 @@ function less(event) {
         bet -= 1;
         document.getElementById('bet-tally').innerHTML = bet;
     }
-    
+}
+
+function lessKey() {
+    if (ev.key == 'ArrowDown') {
+        if (bet < 2) {
+            alert("You have to bet something to play!");
+            console.log("You have to bet something to play!");
+        } else {
+            bet -= 1;
+            document.getElementById('bet-tally').innerHTML = bet;
+        }
+    }
 }
 
 
@@ -141,10 +166,41 @@ function reEnable(){
 }
 
 // Bet change event listeners
+
+//CLEAN UP - Keydown for up arrow = increment bet
+document.body.addEventListener('keydown', (ev) => {
+    if (ev.key == 'ArrowUp') {
+        if (bet > (credit - 1)) {
+            alert("Your bet amount can't exceed your credits!");
+            console.log("Your bet amount can't exceed your credits!");
+        } else {
+            bet += 1;
+            document.getElementById('bet-tally').innerHTML = bet;
+        }
+    }
+});
+
 increment.addEventListener('click', more);
+
+//CLEAN UP - Keydown for down arrow = decrement bet
+document.body.addEventListener('keydown', (ev) => {
+        if (ev.key == 'ArrowDown') {
+            if (bet < 2) {
+                alert("You have to bet something to play!");
+                console.log("You have to bet something to play!");
+            } else {
+                bet -= 1;
+                document.getElementById('bet-tally').innerHTML = bet;
+            }
+        }
+})
+
 decrement.addEventListener('click', less);
 
 // Spin button event listener
+
+// CLEAN UP!!! - All functions rewritten in keydown 'spacebar' conditions
+
 spinButton.addEventListener('click', wager);
 spinButton.addEventListener('click', spin);
 spinButton.addEventListener('click', spinAnimation);
