@@ -24,6 +24,16 @@ let backgroundPositionY1 = parseFloat(reel1.style.backgroundPositionY);
 let backgroundPositionY2 = parseFloat(reel2.style.backgroundPositionY);
 let backgroundPositionY3 = parseFloat(reel3.style.backgroundPositionY);
 
+// Creating a function which will pause the execution of the code for the duration of slot spin animation
+// before letting the user know whether or not they have won and by how much
+// Taken from Tim Mousk's tutorial: https://youtu.be/1FwjYqB6CRY?si=Cg5tYRKr6BS0Wpxe
+
+const wait = async(seconds) => {
+    await new Promise (resolve => {
+        return setTimeout(resolve, seconds);
+    });
+}
+
 
 // Function for incrementing or decrementing the bet amount by 1 for each click of an arrow beside the counter
 function more(event) {
@@ -136,3 +146,4 @@ spinButton.addEventListener('click', spin);
 spinButton.addEventListener('click', spinAnimation);
 spinButton.addEventListener('click', winCheck);
 spinButton.addEventListener('click', loseCheck);
+wait(10);
