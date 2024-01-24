@@ -81,6 +81,11 @@ function wager(event) {
     document.getElementById('credit-counter').innerHTML = credit;
 }
 
+function wagerKey() {
+    credit = credit - bet;
+    document.getElementById('credit-counter').innerHTML = credit;
+}
+
 
 // Slot machine spin result code
 
@@ -106,6 +111,28 @@ function spin(event) {
   console.log(stopPosition);
 }
 
+function spinKey() {
+
+    for (i = 0; i < 3; i++) (
+      oldValue[i] = stopValue[i]
+    )
+    
+    for (i = 0; i < 3; i++) {
+      newValue[i] = ((Math.round(Math.random() * 10)) % 9);
+      stopValue.splice(i, 1, newValue[i]);
+    }
+    
+    console.log(stopValue);
+  
+  
+  
+    for (i = 0; i < 3; i++) {
+      stopPosition.splice(i, 1, reel[stopValue[i]]);
+    }
+  
+    console.log(stopPosition);
+  }
+
 
 // Slot machine spin animation
 
@@ -121,6 +148,19 @@ function spinAnimation (event) {
 
   baseTransition += iconHeight * 9;
   }
+
+  function spinAnimationKey () {
+    reel1.style.transition = `background-position-y 4s cubic-bezier(.49,.04,.78,1.15)`;
+    reel1.style.backgroundPositionY = `${((baseTransition) + (12 + (stopValue[0] * iconHeight) * (-1)))}px`;
+  
+    reel2.style.transition = `background-position-y 6s cubic-bezier(.49,.04,.78,1.15)`;
+    reel2.style.backgroundPositionY = `${((baseTransition * 2) + (12 + (stopValue[1] * iconHeight) * (-1)))}px`;
+  
+    reel3.style.transition = `background-position-y 8s cubic-bezier(.49,.04,.78,1.15)`;
+    reel3.style.backgroundPositionY = `${((baseTransition * 3) + (12 + (stopValue[2] * iconHeight) * (-1)))}px`;
+  
+    baseTransition += iconHeight * 9;
+    }
 
 // Win Condition Code
 
@@ -156,6 +196,10 @@ function loseCheck() {
 
 // Function to disable the button while the reels are spinning 
 function tempDisable(event){
+    spinButton.disabled = (true);
+}
+
+function tempDisableKey(){
     spinButton.disabled = (true);
 }
 
@@ -200,6 +244,20 @@ decrement.addEventListener('click', less);
 // Spin button event listener
 
 // CLEAN UP!!! - All functions rewritten in keydown 'spacebar' conditions
+/*
+document.body.addEventListener('keydown', (ev) => {
+    if (ev.key == 'space') {
+        console.log(ev);
+        if (ev.repeat) {
+            return false;  // prevents holding the key from triggering the event again 
+        }
+        wagerKey();
+        spinKey();
+        spinAnimationKey();
+        tempDisableKey();
+    }
+})
+*/
 
 spinButton.addEventListener('click', wager);
 spinButton.addEventListener('click', spin);
