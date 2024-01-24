@@ -129,7 +129,16 @@ function loseCheck() {
     }
 }
 
-//Function that delays the final two Event listeners
+// Function to disable the button while the reels are spinning 
+function tempDisable(event){
+    spinButton.disabled = (true);
+}
+
+// Function to reenable the spin button when spin is finished
+// (providing you haven't gotten a Game Over)
+function reEnable(){
+    spinButton.disabled = (false);
+}
 
 // Bet change event listeners
 increment.addEventListener('click', more);
@@ -139,9 +148,11 @@ decrement.addEventListener('click', less);
 spinButton.addEventListener('click', wager);
 spinButton.addEventListener('click', spin);
 spinButton.addEventListener('click', spinAnimation);
+spinButton.addEventListener('click', tempDisable);
 // Function that will wait for the result of the reels before informing the user / updating the credit score
 // Taken from HowToCodeSchool's YT channel: https://youtu.be/Gd3qyr9llwU?si=tcbXNtzFXrA3wV3-
 function wait(){
+    reEnable();
     winCheck();
     loseCheck();
 }
