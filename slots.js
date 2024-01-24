@@ -115,11 +115,11 @@ function loseCheck(event) {
     if (credit === 0) {
         console.log("You're outta cash - GAME OVER!")
         alert("You're outta cash - GAME OVER!");
-//        location.replace;
+        location.refresh(true);
     } else if (credit < 0) {
         console.log("You've dropped into debt - GAME OVER!")
         alert("You've dropped into debt - GAME OVER!");
-//        location.replace();
+        location.refresh(true);
     }
     //Add an addendum here to send the player to a game over screen once they lose
 }
