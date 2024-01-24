@@ -25,17 +25,6 @@ let backgroundPositionY1 = parseFloat(reel1.style.backgroundPositionY);
 let backgroundPositionY2 = parseFloat(reel2.style.backgroundPositionY);
 let backgroundPositionY3 = parseFloat(reel3.style.backgroundPositionY);
 
-// Creating a function which will pause the execution of the code for the duration of slot spin animation
-// before letting the user know whether or not they have won and by how much
-// Taken from Tim Mousk's tutorial: https://youtu.be/1FwjYqB6CRY?si=Cg5tYRKr6BS0Wpxe
-
-const wait = async(milliseconds) => {
-    await new Promise (resolve => {
-        return setTimeout(resolve, milliseconds);
-    });
-}
-
-
 // Function for incrementing or decrementing the bet amount by 1 for each click of an arrow beside the counter
 function more(event) {
     if (bet > (credit - 1)) {
@@ -110,7 +99,7 @@ function spinAnimation (event) {
 
 // Win Condition Code
 
-function winCheck(event){
+function winCheck(){
     if (stopPosition[0] === stopPosition[1] && stopPosition[1] === stopPosition[2]) {
       result.innerHTML = '!!!YOU WIN BIG!!!';
       console.log('!!!YOU WIN BIG!!!');
@@ -128,7 +117,7 @@ function winCheck(event){
 }
 }
 
-function loseCheck(event) {
+function loseCheck() {
     if (credit === 0) {
         console.log("You're outta cash - GAME OVER!")
         alert("You're outta cash - GAME OVER!");
@@ -140,7 +129,7 @@ function loseCheck(event) {
     }
 }
 
-//Function that displays the user's result in the HTML
+//Function that delays the final two Event listeners
 
 // Bet change event listeners
 increment.addEventListener('click', more);
@@ -150,6 +139,9 @@ decrement.addEventListener('click', less);
 spinButton.addEventListener('click', wager);
 spinButton.addEventListener('click', spin);
 spinButton.addEventListener('click', spinAnimation);
-wait(10000);
-spinButton.addEventListener('click', winCheck);
-spinButton.addEventListener('click', loseCheck);
+// Function that will wait for the result of the reels before informing the user / updating the credit score
+// Taken from HowToCodeSchool's YT channel: https://youtu.be/Gd3qyr9llwU?si=tcbXNtzFXrA3wV3-
+function wait(){
+    winCheck();
+    loseCheck();
+}
