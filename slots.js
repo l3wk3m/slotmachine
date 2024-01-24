@@ -94,7 +94,7 @@ function spinAnimation (event) {
   reel3.style.transition = `background-position-y 8s cubic-bezier(.49,.04,.78,1.15)`;
   reel3.style.backgroundPositionY = `${((baseTransition * 3) + (12 + (stopValue[2] * iconHeight) * (-1)))}px`;
 
-  baseTransition += baseTransition;
+  baseTransition += iconHeight * 9;
   }
 
 // Win Condition Code
