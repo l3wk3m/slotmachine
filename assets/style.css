@@ -120,17 +120,19 @@ button {
 }
 
 #more {
-    border: black 5px solid;
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 50px;
+    width: 50px;
 }
 
 #less {
-    border: black 5px solid;
-        border-radius: 50%;
-        height: 25px;
-        width: 25px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 50px;
+    width: 50px;
 }
 
 #credit-counter {
