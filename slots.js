@@ -85,13 +85,13 @@ function spin(event) {
 // Slot machine spin animation
 
 function spinAnimation (event) {
-  reel1.style.transition = `background-position-y 4s cubic-bezier(.37,.21,.71,1.18)`;
+  reel1.style.transition = `background-position-y 4s cubic-bezier(.49,.04,.78,1.15)`;
   reel1.style.backgroundPositionY = `${((baseTransition) + (12 + (stopValue[0] * iconHeight) * (-1)))}px`;
 
-  reel2.style.transition = `background-position-y 6s cubic-bezier(.41,.15,.66,1.27)`;
+  reel2.style.transition = `background-position-y 6s cubic-bezier(.49,.04,.78,1.15)`;
   reel2.style.backgroundPositionY = `${((baseTransition * 2) + (12 + (stopValue[1] * iconHeight) * (-1)))}px`;
 
-  reel3.style.transition = `background-position-y 8s cubic-bezier(.44,.11,.63,1.38)`;
+  reel3.style.transition = `background-position-y 8s cubic-bezier(.49,.04,.78,1.15)`;
   reel3.style.backgroundPositionY = `${((baseTransition * 3) + (12 + (stopValue[2] * iconHeight) * (-1)))}px`;
 
   baseTransition += baseTransition;
