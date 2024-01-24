@@ -21,6 +21,14 @@ body {
     z-index: 10;
 }
 
+#result {
+    justify-self: center;
+    width: 200px;
+    height: 40px;
+    border : black 5px solid;
+    text-align: center;
+}
+
 footer {
     position: absolute;
     bottom: 0px;

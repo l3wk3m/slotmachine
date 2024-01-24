@@ -18,6 +18,7 @@ const decrement = document.getElementById('less');
 const reel1 = document.getElementById('reel1');
 const reel2 = document.getElementById('reel2');
 const reel3 = document.getElementById('reel3');
+const result = document.getElementById('result');
 
 // Setting these three as number data types for animation purposes in the spinAnimation function
 let backgroundPositionY1 = parseFloat(reel1.style.backgroundPositionY);
@@ -28,9 +29,9 @@ let backgroundPositionY3 = parseFloat(reel3.style.backgroundPositionY);
 // before letting the user know whether or not they have won and by how much
 // Taken from Tim Mousk's tutorial: https://youtu.be/1FwjYqB6CRY?si=Cg5tYRKr6BS0Wpxe
 
-const wait = async(seconds) => {
+const wait = async(milliseconds) => {
     await new Promise (resolve => {
-        return setTimeout(resolve, seconds);
+        return setTimeout(resolve, milliseconds);
     });
 }
 
@@ -111,16 +112,20 @@ function spinAnimation (event) {
 
 function winCheck(event){
     if (stopPosition[0] === stopPosition[1] && stopPosition[1] === stopPosition[2]) {
-        console.log('!!!YOU WIN BIG!!!');
-        credit = credit + (bet * 10);
-        document.getElementById('credit-counter').innerHTML = credit;
-    } else if (stopPosition[0] === stopPosition[1] || stopPosition[1] === stopPosition[2] || stopPosition[0] === stopPosition[2]) {
-        console.log('You win!');
-        credit = credit + (bet * 3);
-        document.getElementById('credit-counter').innerHTML = credit;
-    } else {
-        console.log('Hard luck - try again!');
-    }
+      result.innerHTML = '!!!YOU WIN BIG!!!';
+      console.log('!!!YOU WIN BIG!!!');
+      credit = credit + (bet * 10);
+      document.getElementById('credit-counter').innerHTML = credit;
+      //Might be worth considering moving the DOM method to update with the winnings until after the result appears
+  } else if (stopPosition[0] === stopPosition[1] || stopPosition[1] === stopPosition[2] || stopPosition[0] === stopPosition[2]) {
+      result.innerHTML = 'You win!';
+      console.log('You win!');
+      credit = credit + (bet * 3);
+      document.getElementById('credit-counter').innerHTML = credit;
+} else {
+      result.innerHTML = 'Hard luck - try again!';
+      console.log('Hard luck - try again!');
+}
 }
 
 function loseCheck(event) {
@@ -133,8 +138,9 @@ function loseCheck(event) {
         alert("You've dropped into debt - GAME OVER!");
         spinButton.disabled = (true);
     }
-    //Add an addendum here to send the player to a game over screen once they lose
 }
+
+//Function that displays the user's result in the HTML
 
 // Bet change event listeners
 increment.addEventListener('click', more);
@@ -144,6 +150,6 @@ decrement.addEventListener('click', less);
 spinButton.addEventListener('click', wager);
 spinButton.addEventListener('click', spin);
 spinButton.addEventListener('click', spinAnimation);
+wait(10000);
 spinButton.addEventListener('click', winCheck);
 spinButton.addEventListener('click', loseCheck);
-wait(10);
