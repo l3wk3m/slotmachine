@@ -86,13 +86,13 @@ function spin(event) {
 
 function spinAnimation (event) {
   reel1.style.transition = `background-position-y 4s`;
-  reel1.style.backgroundPositionY = `${((baseTransition) + (12 + (((stopValue[0] + oldValue[0]) % 9) * iconHeight) * (-1)))}px`;
+  reel1.style.backgroundPositionY = `${((baseTransition) + (12 + (stopValue[0] * iconHeight) * (-1)))}px`;
 
   reel2.style.transition = `background-position-y 6s`;
-  reel2.style.backgroundPositionY = `${((baseTransition * 2) + (12 + (((stopValue[1] + oldValue[1]) % 9) * iconHeight) * (-1)))}px`;
+  reel2.style.backgroundPositionY = `${((baseTransition * 2) + (12 + (stopValue[1] * iconHeight) * (-1)))}px`;
 
   reel3.style.transition = `background-position-y 8s`;
-  reel3.style.backgroundPositionY = `${((baseTransition * 4) + (12 + (((stopValue[2] + oldValue[2]) % 9) * iconHeight) * (-1)))}px`;
+  reel3.style.backgroundPositionY = `${((baseTransition * 4) + (12 + (stopValue[2] * iconHeight) * (-1)))}px`;
   }
 
 // Win Condition Code
