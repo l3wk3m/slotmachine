@@ -213,6 +213,7 @@ function loseCheck() {
 // Function to disable the button while the reels are spinning 
 function tempDisable(event){
     spinButton.disabled = (true);
+    allInButton.disabled = (true);
 }
 
 function tempDisableKey(){
@@ -223,6 +224,7 @@ function tempDisableKey(){
 // (providing you haven't gotten a Game Over)
 function reEnable(){
     spinButton.disabled = (false);
+    allInButton.disabled = (false);
 }
 
 // Function to reset your Bet value to below your Credit value if it ends up above it
