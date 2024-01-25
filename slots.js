@@ -200,10 +200,12 @@ function loseCheck() {
     if (credit === 0) {
         console.log("You're outta cash - GAME OVER!")
         alert("You're outta cash - GAME OVER!");
+        result.innerHTML = "You're outta cash - GAME OVER!";
         spinButton.disabled = (true);
     } else if (credit < 0) {
         console.log("You've dropped into debt - GAME OVER!")
         alert("You've dropped into debt - GAME OVER!");
+        result.innerHTML = "You've dropped into debt - GAME OVER!";
         spinButton.disabled = (true);
     }
 }
