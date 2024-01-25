@@ -42,8 +42,7 @@ function less(event) {
     if (bet < 2) {
         alert("You have to bet something to play!");
         console.log("You have to bet something to play!");
-    } else if (bet < credit - 1) {
-        spinButton.disabled = ('false');
+    } else {
         bet -= 1;
         document.getElementById('bet-tally').innerHTML = bet;
     }
@@ -198,8 +197,6 @@ function reEnable(){
 
 function resetBigBet(){
     if (bet > (credit - 1)) {
-        alert("Your bet amount can't exceed your credits! Resetting your bet amount...");
-        console.log("Your bet amount can't exceed your credits! Resetting your bet amount...");
         bet = bet - (bet - credit);
         document.getElementById('bet-tally').innerHTML = bet;
         reEnable();
@@ -230,10 +227,6 @@ document.body.addEventListener('keydown', (ev) => {
             if (bet < 2) {
                 alert("You have to bet something to play!");
                 console.log("You have to bet something to play!");
-            } else if (bet < (credit - 1)) {
-                bet -= 1;
-                document.getElementById('bet-tally').innerHTML = bet;
-                spinButton.disabled = ('false');
             } else {
                 bet -= 1;
                 document.getElementById('bet-tally').innerHTML = bet;
