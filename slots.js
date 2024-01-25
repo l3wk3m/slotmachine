@@ -207,6 +207,7 @@ function resetBigBet(){
 // Bet change event listeners
 
 //CLEAN UP - Keydown for up arrow = increment bet
+// Tutorial source = https://youtu.be/Q3ktcptd2yI?si=qJsY55Xoz-6vomFQ
 document.body.addEventListener('keydown', (ev) => {
     if (ev.key == 'ArrowUp') {
         if (bet > (credit - 1)) {
