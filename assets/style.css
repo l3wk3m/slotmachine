@@ -12,6 +12,8 @@ body {
     color: #dad3d3;
 }
 
+/*
+Commenting out for now - will be adding to media query later on
 #reel {
     position: absolute;
     top: 0px;
@@ -20,6 +22,7 @@ body {
     width: auto;
     z-index: 10;
 }
+*/
 
 #result {
     justify-self: center;
