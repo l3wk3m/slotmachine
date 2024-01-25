@@ -154,6 +154,11 @@ button {
     width: 50px;
 }
 
+#all-in{
+    align-self: center;
+    justify-self: center;
+}
+
 #credit-counter {
     width: 100px;
 }

@@ -230,6 +230,8 @@ function resetBigBet(){
         bet = bet - (bet - credit);
         document.getElementById('bet-tally').innerHTML = bet;
         reEnable();
+    } else if (bet == credit){
+        tempDisableKey();
     } else {reEnable();}
 }
 
