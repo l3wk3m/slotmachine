@@ -34,25 +34,28 @@
         
       
 <!--        <img src='assets/images/SlotReelsMeasure.jpg' id="reel" alt="The reel for the slot machine" /> -->
-        <button type="button" id="spin-button" onclick="setTimeout(wait, 8000)">SPIN</button>
+        
       </div>
     </div>
     <footer>
       <div>
-        <h1>Credits: <span id="credit-counter">100</span></h1>
+        <h1 id="credits">Credits: <span id="credit-counter">100</span></h1>
       </div>
       <div id="bet">
         <div>
 
-          <h2>Bet: <span id="bet-tally">10</span></h2>
+          <h2 id="bet-number">Bet: <span id="bet-tally">10</span></h2>
         </div>
-        <div>
+        <div id="more-or-less">
           <div id="ten-more"><i class="fa-solid fa-angles-up"></i></div>
           <div id="more"><i class="fa-solid fa-angle-up"></i></div>
           <div id="less"><i class="fa-solid fa-angle-down"></i></div>
-          <dic id="ten-less"><i class="fa-solid fa-angles-down"></i></dic>
+          <div id="ten-less"><i class="fa-solid fa-angles-down"></i></div>
         </div>
+        <div id="buttons">
         <button type="button" id="all-in">All in!</button>
+        <button type="button" id="spin-button" onclick="setTimeout(wait, 8000)">SPIN</button>
+        </div>
       </div>
     </footer>
 

@@ -24,6 +24,8 @@ Commenting out for now - will be adding to media query later on
 }
 */
 
+
+
 #result {
     justify-self: center;
     width: 200px;
@@ -41,9 +43,8 @@ footer {
     padding: 1em 0;
     background-color: #3a3a3a;
     width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    display: grid;
+    justify-content: center;
     box-shadow: 2px 0 2px #070606;
 }
 
@@ -52,20 +53,20 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0;
+    padding: 0;
 }
 
 #slot-machine {
     display: grid;
     height: 30rem;
-    width: 30rem;
+    width: 20rem;
     border: #3a3a3a 5px solid;
-    padding: 10px 0;
+    padding: 0.3rem 0;
 }
 
 button {
-    width : 200px;
-    height : 80px;
+    width : 5rem;
+    height : 3rem;
     border : black 5px solid;
     align-self: end;
     justify-self: center;
@@ -75,6 +76,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    height: 16rem;
 }
 
 .reel {
@@ -121,6 +123,32 @@ button {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+#bet-tally {
+    width: 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#credits {
+    display: flex;
+    justify-content: center;
+}
+
+#credit-counter {
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#more-or-less {
+    display: flex;
+    flex-direction: column;
 }
 
 #more {
@@ -155,11 +183,23 @@ button {
     width: 50px;
 }
 
+#buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+#spin-button {
+    align-self: center;
+    width : 6rem;
+    height : 4rem;
+    background-color: #3a3a3a;
+    color: white;
+}
+
 #all-in{
     align-self: center;
     justify-self: center;
-}
-
-#credit-counter {
-    width: 100px;
 }
