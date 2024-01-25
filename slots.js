@@ -5,7 +5,7 @@ let oldValue = [];
 const reel = ['melon', 'seven', 'cherry', 'passionfruit', 'bell', 'cherries', 'orange', 'roulette', 'lemon'];
 let stopPosition = ['???', '???', '???'];
 const iconHeight = 103;
-let baseTransition = iconHeight * 18;
+let baseTransition = iconHeight * 27;
 
 // Declaring variables for 'credit storage' and 'bets'
 let credit = parseInt(document.getElementById('credit-counter').innerHTML);
@@ -128,7 +128,7 @@ function spinAnimation (event) {
     reel3.style.transition = `background-position-y 8s cubic-bezier(.49,.04,.78,1.15)`;
     reel3.style.backgroundPositionY = `${((baseTransition * 3) + (12 + (stopValue[2] * iconHeight) * (-1)))}px`;
 
-    baseTransition += iconHeight * 9;
+    baseTransition += iconHeight * 27;
   }
 
   /*
