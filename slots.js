@@ -231,9 +231,11 @@ function resetBigBet(){
     if (bet > credit) {
         bet = bet - (bet - credit);
         document.getElementById('bet-tally').innerHTML = bet;
-        reEnable();
-    } else if (bet === credit && credit === 0){
-        spinButton.disabled = (true);;
+        if (bet === credit && credit === 0){
+            spinButton.disabled = (true);
+        } else {
+            reEnable();
+        }
     } else {reEnable();}
 }
 
