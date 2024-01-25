@@ -1,39 +1,27 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Reel Image featuring all of the different fruits of the slot machine, which I created with ChatGPT and Photopea](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/SlotReelsMeasure.jpg?raw=true)
 
-Welcome,
+![Original Reel Image taken from a prompt I gave to ChatGPT](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/Original%20Reel%20Icons.png?raw=true)
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Editing Process of the reel using the online image editor Photopea](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/Editing%20in%20photopea.png?raw=true)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+![My first flowchart created at the beginning of this project, outlining what I hoped the game loop would be]()
 
-## Codeanywhere Reminders
+![My final flowchart created at the end of the project detailing the final project game loop]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+![My first wireframe of how I wanted the slot machine to appear on the screen](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/InitialWireframe.png?raw=true)
 
-`python3 -m http.server`
+Welcome to my JavaScript Slot Machine project.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+The purpose of this project is to create a fun and immersive slot machine game using only JavaScript, HTML and CSS and deploy it on a cloud based platform. My aims are that the game be:
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+1. Intuitive - that the user can understand the stakes and the mechanics of the game with minor exploration
+2. Responsive - that a similar game experience is felt whether playing on smartphone or laptop
+3. Engaging - that the player enjoys the gaming experience
 
-`http_server`
+When I was young, my family used to holiday to Wexford over the summers. When we went to the amusements park in Courtown to go on the bumpers, we would always walk past the slot machines on the way in. I was always in awe of the simple game of chance at play there, though it would be years later before my parents would trust me enough to give money to play them.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The appeal of a slots game is that the desired outcome is immediately intuitive and when you match even two icons you'll watch your credit score increase.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+The aim of the game is to keep going until you're completely out of credits. There is no ultimate win condition with a gambling game like this.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+**Ideal User Experience**
