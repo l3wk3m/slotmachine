@@ -138,6 +138,22 @@ button {
     width: 50px;
 }
 
+#ten-more {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 50px;
+    width: 50px;
+}
+
+#ten-less {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 50px;
+    width: 50px;
+}
+
 #credit-counter {
     width: 100px;
 }
