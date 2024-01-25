@@ -41,8 +41,8 @@ function more(event) {
 
 function tenMore(event){
     if (bet > (credit - 10)) {
-        alert("You have to bet something to play!");
-        console.log("You have to bet something to play!");
+        alert("Your bet amount can't exceed your credits!");
+        console.log("Your bet amount can't exceed your credits!");
     } else {
         bet += 10;
         document.getElementById('bet-tally').innerHTML = bet;
