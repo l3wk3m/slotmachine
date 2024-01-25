@@ -38,88 +38,42 @@ function more(event) {
 
 // Keydown version
 
-function moreKey() {
-    if (ev.key == 'ArrowUp') {
-        if (bet > (credit - 1)) {
-            alert("Your bet amount can't exceed your credits!");
-            console.log("Your bet amount can't exceed your credits!");
-        } else {
-            bet += 1;
-            document.getElementById('bet-tally').innerHTML = bet;
-        }
-    }
-}
-
-
-
 function less(event) {
     if (bet < 2) {
         alert("You have to bet something to play!");
         console.log("You have to bet something to play!");
-    } else {
+    } else if (bet < credit - 1) {
+        spinButton.disabled = ('false');
         bet -= 1;
         document.getElementById('bet-tally').innerHTML = bet;
-    }
-}
-
-function lessKey() {
-    if (ev.key == 'ArrowDown') {
-        if (bet < 2) {
-            alert("You have to bet something to play!");
-            console.log("You have to bet something to play!");
-        } else {
-            bet -= 1;
-            document.getElementById('bet-tally').innerHTML = bet;
-        }
     }
 }
 
 
 // Code for storing and updating credit values and pushing
 function wager(event) {
-    credit = credit - bet;
-    document.getElementById('credit-counter').innerHTML = credit;
+        credit = credit - bet;
+        document.getElementById('credit-counter').innerHTML = credit;
 }
 
+/*
 function wagerKey() {
     credit = credit - bet;
     document.getElementById('credit-counter').innerHTML = credit;
 }
-
+*/
 
 // Slot machine spin result code
 
 function spin(event) {
-
-  for (i = 0; i < 3; i++) (
-    oldValue[i] = stopValue[i]
-  )
-  
-  for (i = 0; i < 3; i++) {
-    newValue[i] = ((Math.round(Math.random() * 10)) % 9);
-    stopValue.splice(i, 1, newValue[i]);
-  }
-  
-  console.log(stopValue);
-
-
-
-  for (i = 0; i < 3; i++) {
-    stopPosition.splice(i, 1, reel[stopValue[i]]);
-  }
-
-  console.log(stopPosition);
-}
-
-function spinKey() {
-
+   
     for (i = 0; i < 3; i++) (
-      oldValue[i] = stopValue[i]
+        oldValue[i] = stopValue[i]
     )
     
     for (i = 0; i < 3; i++) {
-      newValue[i] = ((Math.round(Math.random() * 10)) % 9);
-      stopValue.splice(i, 1, newValue[i]);
+        newValue[i] = ((Math.round(Math.random() * 10)) % 9);
+        stopValue.splice(i, 1, newValue[i]);
     }
     
     console.log(stopValue);
@@ -127,28 +81,58 @@ function spinKey() {
   
   
     for (i = 0; i < 3; i++) {
-      stopPosition.splice(i, 1, reel[stopValue[i]]);
+        stopPosition.splice(i, 1, reel[stopValue[i]]);
     }
   
     console.log(stopPosition);
-  }
 
+}
+
+/*
+function spinKey() {
+
+    if (bet > (credit - 1)) {
+        alert("Your bet amount can't exceed your credits! Pick a lower bet value.");
+        console.log("Your bet amount can't exceed your credits! Pick a lower bet value.");
+    } else {    
+        for (i = 0; i < 3; i++) (
+            oldValue[i] = stopValue[i]
+        )
+    
+        for (i = 0; i < 3; i++) {
+            newValue[i] = ((Math.round(Math.random() * 10)) % 9);
+            stopValue.splice(i, 1, newValue[i]);
+        }
+    
+        console.log(stopValue);
+  
+  
+  
+        for (i = 0; i < 3; i++) {
+            stopPosition.splice(i, 1, reel[stopValue[i]]);
+        }
+  
+        console.log(stopPosition);
+    }
+  }
+*/
 
 // Slot machine spin animation
 
 function spinAnimation (event) {
-  reel1.style.transition = `background-position-y 4s cubic-bezier(.49,.04,.78,1.15)`;
-  reel1.style.backgroundPositionY = `${((baseTransition) + (12 + (stopValue[0] * iconHeight) * (-1)))}px`;
+    reel1.style.transition = `background-position-y 4s cubic-bezier(.49,.04,.78,1.15)`;
+    reel1.style.backgroundPositionY = `${((baseTransition) + (12 + (stopValue[0] * iconHeight) * (-1)))}px`;
 
-  reel2.style.transition = `background-position-y 6s cubic-bezier(.49,.04,.78,1.15)`;
-  reel2.style.backgroundPositionY = `${((baseTransition * 2) + (12 + (stopValue[1] * iconHeight) * (-1)))}px`;
+    reel2.style.transition = `background-position-y 6s cubic-bezier(.49,.04,.78,1.15)`;
+    reel2.style.backgroundPositionY = `${((baseTransition * 2) + (12 + (stopValue[1] * iconHeight) * (-1)))}px`;
 
-  reel3.style.transition = `background-position-y 8s cubic-bezier(.49,.04,.78,1.15)`;
-  reel3.style.backgroundPositionY = `${((baseTransition * 3) + (12 + (stopValue[2] * iconHeight) * (-1)))}px`;
+    reel3.style.transition = `background-position-y 8s cubic-bezier(.49,.04,.78,1.15)`;
+    reel3.style.backgroundPositionY = `${((baseTransition * 3) + (12 + (stopValue[2] * iconHeight) * (-1)))}px`;
 
-  baseTransition += iconHeight * 9;
+    baseTransition += iconHeight * 9;
   }
 
+  /*
   function spinAnimationKey () {
     reel1.style.transition = `background-position-y 4s cubic-bezier(.49,.04,.78,1.15)`;
     reel1.style.backgroundPositionY = `${((baseTransition) + (12 + (stopValue[0] * iconHeight) * (-1)))}px`;
@@ -161,6 +145,7 @@ function spinAnimation (event) {
   
     baseTransition += iconHeight * 9;
     }
+    */
 
 // Win Condition Code
 
@@ -209,6 +194,19 @@ function reEnable(){
     spinButton.disabled = (false);
 }
 
+// Function to reset your Bet value to below your Credit value if it ends up above it
+
+function resetBigBet(){
+    if (bet > (credit - 1)) {
+        alert("Your bet amount can't exceed your credits! Resetting your bet amount...");
+        console.log("Your bet amount can't exceed your credits! Resetting your bet amount...");
+        bet = bet - (bet - credit);
+        document.getElementById('bet-tally').innerHTML = bet;
+        reEnable();
+    } else {return;}
+}
+
+
 // Bet change event listeners
 
 //CLEAN UP - Keydown for up arrow = increment bet
@@ -232,6 +230,10 @@ document.body.addEventListener('keydown', (ev) => {
             if (bet < 2) {
                 alert("You have to bet something to play!");
                 console.log("You have to bet something to play!");
+            } else if (bet < (credit - 1)) {
+                bet -= 1;
+                document.getElementById('bet-tally').innerHTML = bet;
+                spinButton.disabled = ('false');
             } else {
                 bet -= 1;
                 document.getElementById('bet-tally').innerHTML = bet;
@@ -266,7 +268,7 @@ spinButton.addEventListener('click', tempDisable);
 // Function that will wait for the result of the reels before informing the user / updating the credit score
 // Taken from HowToCodeSchool's YT channel: https://youtu.be/Gd3qyr9llwU?si=tcbXNtzFXrA3wV3-
 function wait(){
-    reEnable();
     winCheck();
     loseCheck();
+    resetBigBet();
 }
