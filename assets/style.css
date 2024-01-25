@@ -62,6 +62,8 @@ footer {
     width: 20rem;
     border: #3a3a3a 5px solid;
     padding: 0.3rem 0;
+    position: absolute;
+    top: 0.5%;
 }
 
 button {
