@@ -13,8 +13,11 @@ let bet = parseInt(document.getElementById('bet-tally').innerHTML);
 
 // Declaring variable to help navigate the DOM
 const spinButton = document.getElementById('spin-button');
+const allInButton = document.getElementById('all-in');
 const increment = document.getElementById('more');
+const incrementTen = document.getElementById('ten-more');
 const decrement = document.getElementById('less');
+const decrementTen = document.getElementById('ten-less');
 const reel1 = document.getElementById('reel1');
 const reel2 = document.getElementById('reel2');
 const reel3 = document.getElementById('reel3');
@@ -36,6 +39,16 @@ function more(event) {
     }
 }
 
+function tenMore(event){
+    if (bet > (credit - 10)) {
+        alert("You have to bet something to play!");
+        console.log("You have to bet something to play!");
+    } else {
+        bet += 10;
+        document.getElementById('bet-tally').innerHTML = bet;
+    }
+}
+
 // Keydown version
 
 function less(event) {
@@ -46,6 +59,23 @@ function less(event) {
         bet -= 1;
         document.getElementById('bet-tally').innerHTML = bet;
     }
+}
+
+function tenLess(event) {
+    if (bet < 11) {
+        alert("You have to bet something to play!");
+        console.log("You have to bet something to play!");
+    } else {
+        bet -= 10;
+        document.getElementById('bet-tally').innerHTML = bet;
+    }
+}
+
+// All-in function
+
+function allIn(event) {
+    bet = credit;
+    document.getElementById('bet-tally').innerHTML = bet;
 }
 
 
@@ -221,6 +251,7 @@ document.body.addEventListener('keydown', (ev) => {
 });
 
 increment.addEventListener('click', more);
+incrementTen.addEventListener('click', tenMore);
 
 //CLEAN UP - Keydown for down arrow = decrement bet
 document.body.addEventListener('keydown', (ev) => {
@@ -236,6 +267,9 @@ document.body.addEventListener('keydown', (ev) => {
 })
 
 decrement.addEventListener('click', less);
+decrementTen.addEventListener('click', tenLess);
+
+allInButton.addEventListener('click', allIn);
 
 // Spin button event listener
 
