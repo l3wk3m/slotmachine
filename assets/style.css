@@ -30,6 +30,7 @@ Commenting out for now - will be adding to media query later on
     height: 40px;
     border : black 5px solid;
     text-align: center;
+    color: black;
 }
 
 footer {

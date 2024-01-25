@@ -226,12 +226,12 @@ function reEnable(){
 // Function to reset your Bet value to below your Credit value if it ends up above it
 
 function resetBigBet(){
-    if (bet > (credit - 1)) {
+    if (bet > credit) {
         bet = bet - (bet - credit);
         document.getElementById('bet-tally').innerHTML = bet;
         reEnable();
-    } else if (bet == credit){
-        tempDisableKey();
+    } else if (bet === credit && credit === 0){
+        spinButton.disabled = (true);;
     } else {reEnable();}
 }
 
