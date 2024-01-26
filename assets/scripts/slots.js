@@ -53,7 +53,6 @@ function restart(event){
 function more(event) {
     if (bet > (credit - 1)) {
         alert("Your bet amount can't exceed your credits!");
-        console.log("Your bet amount can't exceed your credits!");
     } else {
         bet += 1;
         document.getElementById('bet-tally').innerHTML = bet;
@@ -63,7 +62,6 @@ function more(event) {
 function tenMore(event){
     if (bet > (credit - 10)) {
         alert("Your bet amount can't exceed your credits!");
-        console.log("Your bet amount can't exceed your credits!");
     } else {
         bet += 10;
         document.getElementById('bet-tally').innerHTML = bet;
@@ -75,7 +73,6 @@ function tenMore(event){
 function less(event) {
     if (bet < 2) {
         alert("You have to bet something to play!");
-        console.log("You have to bet something to play!");
     } else {
         bet -= 1;
         document.getElementById('bet-tally').innerHTML = bet;
@@ -85,7 +82,6 @@ function less(event) {
 function tenLess(event) {
     if (bet < 11) {
         alert("You have to bet something to play!");
-        console.log("You have to bet something to play!");
     } else {
         bet -= 10;
         document.getElementById('bet-tally').innerHTML = bet;
@@ -106,13 +102,6 @@ function wager(event) {
         document.getElementById('credit-counter').innerHTML = credit;
 }
 
-/*
-function wagerKey() {
-    credit = credit - bet;
-    document.getElementById('credit-counter').innerHTML = credit;
-}
-*/
-
 // Slot machine spin result code
 
 function spin(event) {
@@ -125,47 +114,11 @@ function spin(event) {
         newValue[i] = ((Math.round(Math.random() * 10)) % 9);
         stopValue.splice(i, 1, newValue[i]);
     }
-    
-    console.log(stopValue);
-  
-  
-  
+   
     for (i = 0; i < 3; i++) {
         stopPosition.splice(i, 1, reel[stopValue[i]]);
     }
-  
-    console.log(stopPosition);
-
 }
-
-/*
-function spinKey() {
-
-    if (bet > (credit - 1)) {
-        alert("Your bet amount can't exceed your credits! Pick a lower bet value.");
-        console.log("Your bet amount can't exceed your credits! Pick a lower bet value.");
-    } else {    
-        for (i = 0; i < 3; i++) (
-            oldValue[i] = stopValue[i]
-        )
-    
-        for (i = 0; i < 3; i++) {
-            newValue[i] = ((Math.round(Math.random() * 10)) % 9);
-            stopValue.splice(i, 1, newValue[i]);
-        }
-    
-        console.log(stopValue);
-  
-  
-  
-        for (i = 0; i < 3; i++) {
-            stopPosition.splice(i, 1, reel[stopValue[i]]);
-        }
-  
-        console.log(stopPosition);
-    }
-  }
-*/
 
 // Slot machine spin animation
 // Using template literals to create and update the transitions (as well as some UI stuff) in the CSS 
@@ -184,50 +137,28 @@ function spinAnimation (event) {
     baseTransition += iconHeight * 27;
   }
 
-  /*
-  function spinAnimationKey () {
-    reel1.style.transition = `background-position-y 4s cubic-bezier(.49,.04,.78,1.15)`;
-    reel1.style.backgroundPositionY = `${((baseTransition) + (12 + (stopValue[0] * iconHeight) * (-1)))}px`;
-  
-    reel2.style.transition = `background-position-y 6s cubic-bezier(.49,.04,.78,1.15)`;
-    reel2.style.backgroundPositionY = `${((baseTransition * 2) + (12 + (stopValue[1] * iconHeight) * (-1)))}px`;
-  
-    reel3.style.transition = `background-position-y 8s cubic-bezier(.49,.04,.78,1.15)`;
-    reel3.style.backgroundPositionY = `${((baseTransition * 3) + (12 + (stopValue[2] * iconHeight) * (-1)))}px`;
-  
-    baseTransition += iconHeight * 9;
-    }
-    */
-
 // Win Condition Code
 
 function winCheck(){
     if (stopPosition[0] === stopPosition[1] && stopPosition[1] === stopPosition[2]) {
       result.innerHTML = '!!!YOU WIN BIG!!!';
-      console.log('!!!YOU WIN BIG!!!');
       credit = credit + (bet * 10);
       document.getElementById('credit-counter').innerHTML = credit;
       //Might be worth considering moving the DOM method to update with the winnings until after the result appears
   } else if (stopPosition[0] === stopPosition[1] || stopPosition[1] === stopPosition[2] || stopPosition[0] === stopPosition[2]) {
       result.innerHTML = 'You win!';
-      console.log('You win!');
       credit = credit + (bet * 3);
       document.getElementById('credit-counter').innerHTML = credit;
 } else {
       result.innerHTML = 'Hard luck - try again!';
-      console.log('Hard luck - try again!');
 }
 }
 
 function loseCheck() {
     if (credit === 0) {
-        console.log("You're outta cash - GAME OVER!")
-        alert("You're outta cash - GAME OVER!");
         result.innerHTML = "You're outta cash - GAME OVER!";
         spinButton.disabled = (true);
     } else if (credit < 0) {
-        console.log("You've dropped into debt - GAME OVER!")
-        alert("You've dropped into debt - GAME OVER!");
         result.innerHTML = "You've dropped into debt - GAME OVER!";
         spinButton.disabled = (true);
     }
@@ -265,16 +196,14 @@ function resetBigBet(){
     } else {reEnable();}
 }
 
-
 // Bet change event listeners
 
-//CLEAN UP - Keydown for up arrow = increment bet
+// Keydown for up arrow = increment bet
 // Tutorial source = https://youtu.be/Q3ktcptd2yI?si=qJsY55Xoz-6vomFQ
 document.body.addEventListener('keydown', (ev) => {
     if (ev.key == 'ArrowUp') {
         if (bet > (credit - 1)) {
             alert("Your bet amount can't exceed your credits!");
-            console.log("Your bet amount can't exceed your credits!");
         } else {
             bet += 1;
             document.getElementById('bet-tally').innerHTML = bet;
@@ -285,12 +214,11 @@ document.body.addEventListener('keydown', (ev) => {
 increment.addEventListener('click', more);
 incrementTen.addEventListener('click', tenMore);
 
-//CLEAN UP - Keydown for down arrow = decrement bet
+// Keydown for down arrow = decrement bet
 document.body.addEventListener('keydown', (ev) => {
         if (ev.key == 'ArrowDown') {
             if (bet < 2) {
                 alert("You have to bet something to play!");
-                console.log("You have to bet something to play!");
             } else {
                 bet -= 1;
                 document.getElementById('bet-tally').innerHTML = bet;
@@ -300,27 +228,7 @@ document.body.addEventListener('keydown', (ev) => {
 
 decrement.addEventListener('click', less);
 decrementTen.addEventListener('click', tenLess);
-
 allInButton.addEventListener('click', allIn);
-
-// Spin button event listener
-
-// CLEAN UP!!! - All functions rewritten in keydown 'spacebar' conditions
-/*
-document.body.addEventListener('keydown', (ev) => {
-    if (ev.key == 'space') {
-        console.log(ev);
-        if (ev.repeat) {
-            return false;  // prevents holding the key from triggering the event again 
-        }
-        wagerKey();
-        spinKey();
-        spinAnimationKey();
-        tempDisableKey();
-    }
-})
-*/
-
 spinButton.addEventListener('click', wager);
 spinButton.addEventListener('click', spin);
 spinButton.addEventListener('click', spinAnimation);
