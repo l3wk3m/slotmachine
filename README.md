@@ -133,7 +133,7 @@ W3 CSS Validator
 
 
 # **Bugs**
-I rolled out a githun page deployment of my project and shared it with friends, family, a work group chat and the Code Institue slack channel.
+I rolled out a githun page deployment of my project and shared it with friends, family, a work group chat and the Code Institue slack channel. Below are the bugs I came across throughout the deployment testing phase.
 
 Before I go into the bugs this research uncovered, I will briefly explain how I expected the program to work and what checks I had put in place for anticipated problems before deployment:
 
