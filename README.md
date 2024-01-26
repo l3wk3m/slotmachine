@@ -174,6 +174,9 @@ This was everything I had accounted for and the version I deployed worked to the
 
 It became very clear very quickly that there was no substitution for lots of testing when it came to bug discovery and fixing. Using a large number of people to test this project is definitely going to be something I heavily incorporate into my workflow on future projects.
 
+# Unfixed Bugs
+There are no unfixed bugs at this point.
+
 ## **External Code Credit**
 
 I leaned on a couple of tutorials for bits of code in this project.
