@@ -117,19 +117,19 @@ The jshint JavaScript linter returns lots of warnings that 'let', 'const' and te
 It also alerted me to two cases of a missing semicolon, which I corrected.
 
 Before:
-![jshint Before Fixes](assets/images/jshintBefore.png)
+![jshint Before Fixes](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/jshintBefore.png?raw=true)
 After:
-![jshint After Fixes](assets/images/jshintAfter.png)
+![jshint After Fixes](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/jshintAfter.png?raw=true)
 
 The W3 HTML Validator returned mostly info messages about trailing / characters in some elements in the head. It also warned that giving a button element a role of button was redundant, but I'll keep that in for accessibility reasons.
 
 W3 HTML Validator:
-![W3 HTML Validator](assets/images/HTML Validator.png)
+![W3 HTML Validator](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/HTML%20Validator.png?raw=true)
 
 The W3 CSS Validator returned: No error found.
 
 W3 CSS Validator
-![W3 CSS Validator](assets/images/CSS Validator.png)
+![W3 CSS Validator](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/CSS%20Validator.png?raw=true)
 
 
 # **Bugs**
