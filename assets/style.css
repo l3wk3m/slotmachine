@@ -207,7 +207,10 @@ button {
     color: white;
 }
 
-#all-in{
+#all-in {
     align-self: center;
-    justify-self: center;
+}
+
+#restart-button {
+    align-self: center;
 }

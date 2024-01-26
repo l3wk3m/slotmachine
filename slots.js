@@ -14,6 +14,7 @@ let bet = parseInt(document.getElementById('bet-tally').innerHTML);
 // Declaring variable to help navigate the DOM
 const spinButton = document.getElementById('spin-button');
 const allInButton = document.getElementById('all-in');
+const restartButton = document.getElementById('restart-button');
 const increment = document.getElementById('more');
 const incrementTen = document.getElementById('ten-more');
 const decrement = document.getElementById('less');
@@ -27,6 +28,26 @@ const result = document.getElementById('result');
 let backgroundPositionY1 = parseFloat(reel1.style.backgroundPositionY);
 let backgroundPositionY2 = parseFloat(reel2.style.backgroundPositionY);
 let backgroundPositionY3 = parseFloat(reel3.style.backgroundPositionY);
+
+// Function for disabling the restart button in any scenario other than a game over
+function restartDisable() {
+    if(bet === credit && credit === 0){
+        restartButton.disabled = (false);
+    } else {
+        restartButton.disabled = (true);
+    }
+}
+
+// Function to set the credit and bet values back to their starting position
+function restart(event){
+    credit = 100;
+    document.getElementById('credit-counter').innerHTML = credit;
+    bet = 10;
+    document.getElementById('bet-tally').innerHTML = bet;
+    result.innerHTML = '';
+    spinButton.disabled = (false);
+    allInButton.disabled = (false);
+}
 
 // Function for incrementing or decrementing the bet amount by 1 for each click of an arrow beside the counter
 function more(event) {
@@ -216,6 +237,7 @@ function loseCheck() {
 function tempDisable(event){
     spinButton.disabled = (true);
     allInButton.disabled = (true);
+    restartButton.disabled = (true);
 }
 
 function tempDisableKey(){
@@ -309,4 +331,6 @@ function wait(){
     winCheck();
     loseCheck();
     resetBigBet();
+    restartDisable();
 }
+restartButton.addEventListener('click', restart);
