@@ -4,9 +4,9 @@
 
 The purpose of this project is to create a fun and immersive slot machine game using only JavaScript, HTML and CSS and deploy it on a cloud based platform. My key goals are that the game be:
 
-1. Intuitive - That the user can understand the stakes and the mechanics of the game with minor exploration
-2. Responsive - That a similar game experience is felt whether playing on smartphone or laptop
-3. Engaging - The user experiences a sense of risk and reward when betting their credits
+1. **Intuitive** - That the user can understand the stakes and the mechanics of the game with minor exploration
+2. **Responsive** - That a similar game experience is felt whether playing on smartphone or laptop
+3. **Engaging** - The user experiences a sense of risk and reward when betting their credits
 
 and then the final goal of the project at large is
 
@@ -14,11 +14,11 @@ and then the final goal of the project at large is
 
 I will address each of these goals across sections listed below:
 
-1. Ideal User Experience
-2. UI
-3. Features & Their Development
-4. Accessibility
-5. Testing
+1. **Ideal User Experience**
+2. **UI**
+3. **Features & Their Development**
+4. **Accessibility**
+5. **Testing**
 
 Thank you for taking the time to explore this project - I had a huge amount of fun building it!
 
