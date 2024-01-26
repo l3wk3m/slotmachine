@@ -147,6 +147,16 @@ This was everything I had accounted for and the version I deployed worked to the
 
 It became very clear very quickly that there was no substitution for lots of testing when it came to bug discovery and fixing. Using a large number of people to test this project is definitely going to be something I heavily incorporate into my workflow on future projects.
 
+**External Code Credit**
+
+I leaned on a couple of tutorials for bits of code in this project.
+
+For inspiration for the UI and for the bit of code that I used in the spinAnimation function that uses template literals to govern where the spin for each reel ends up by updating the transition and backgroundPositionY. The tutorial from CodeJos's youtube channel and can be found here: [How to make a slot machine - CodeJos](https://www.youtube.com/watch?v=boI2B4Gpp34)
+
+The video I learned about the setTimeOut() method from is HowToCodeSchool's youtube tutorial: [How to delay javascript function call - HowToCodeSchool](https://www.youtube.com/watch?v=Gd3qyr9llwU)
+
+The video I learned how to properly call a keyboard key with an Event Listener for increasing and decreasing the bet amount with the up and down keys was: [How to Interact With the Keyboard - dcode](https://youtu.be/Q3ktcptd2yI?si=qJsY55Xoz-6vomFQ)
+
 **Conclusion**
 
 I'm extremely pleased with how this project has turned out.
