@@ -1,3 +1,6 @@
+/* Font - Dosis */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -8,50 +11,11 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    font-family: "Caveat", Courier, monospace;
+    font-family: "Dosis", Courier, monospace;
     color: #dad3d3;
 }
 
-/*
-Commenting out for now - will be adding to media query later on
-#reel {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100vh;
-    width: auto;
-    z-index: 10;
-}
-*/
-
-
-
-#result {
-    justify-self: center;
-    width: 200px;
-    height: 40px;
-    border : black 5px solid;
-    text-align: center;
-    color: black;
-    position: relative;
-    bottom: 73%;
-    justify-content: center;
-    display:flex;
-    align-items: center;
-}
-
-footer {
-    position: absolute;
-    bottom: 0px;
-    margin: 0;
-    border: 0;
-    padding: 1em 0;
-    background-color: #3a3a3a;
-    width: 100%;
-    display: grid;
-    justify-content: center;
-    box-shadow: 2px 0 2px #070606;
-}
+/* Main Slot Machine Stylings for the upper half of the page */
 
 #main-body {
     display: flex;
@@ -69,6 +33,20 @@ footer {
     top: 0%;
     width: 100%;
     height: 100%;
+}
+
+#result {
+    justify-self: center;
+    width: 200px;
+    height: 40px;
+    border : black 5px solid;
+    text-align: center;
+    color: black;
+    position: relative;
+    bottom: 73%;
+    justify-content: center;
+    display:flex;
+    align-items: center;
 }
 
 button {
@@ -90,7 +68,7 @@ button {
     height: 309px;
     width: 90px;
     border : black 5px solid;
-    background-image: url('../assets/images/SlotReelsMeasure.jpg');
+    background-image: url('../../assets/images/SlotReelsMeasure.jpg');
     overflow: hidden;
     background-repeat: repeat-y;
     background-position: 0 12px;
@@ -100,7 +78,7 @@ button {
     height: 309px;
     width: 90px;
     border : black 5px solid;
-    background-image: url('../assets/images/SlotReelsMeasure.jpg');
+    background-image: url('../../assets/images/SlotReelsMeasure.jpg');
     overflow: hidden;
     background-repeat: repeat-y;
     background-position: 0 12px;
@@ -110,7 +88,7 @@ button {
     height: 309px;
     width: 90px;
     border : black 5px solid;
-    background-image: url('../assets/images/SlotReelsMeasure.jpg');
+    background-image: url('../../assets/images/SlotReelsMeasure.jpg');
     overflow: hidden;
     background-repeat: repeat-y;
     background-position: 0 12px;
@@ -120,7 +98,7 @@ button {
     height: 309px;
     width: 90px;
     border : black 5px solid;
-    background-image: url('../assets/images/SlotReelsMeasure.jpg');
+    background-image: url('../../assets/images/SlotReelsMeasure.jpg');
     overflow: hidden;
     background-repeat: repeat-y;
     background-position: 0 12px;
@@ -131,6 +109,21 @@ button {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+}
+
+/* Styles for the 'Control Panel' part of the page */
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    margin: 0;
+    border: 0;
+    padding: 1em 0;
+    background-color: #3a3a3a;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    box-shadow: 2px 0 2px #070606;
 }
 
 #bet-tally {
@@ -199,6 +192,8 @@ button {
     height: 100%;
 }
 
+/* Three Main Buttons Stylings */
+
 #spin-button {
     align-self: center;
     width : 6rem;
@@ -215,6 +210,7 @@ button {
     align-self: center;
 }
 
+/* Media Queries */
 /* Media query for laptop */
 @media screen and (min-width: 992px) {
     footer {
