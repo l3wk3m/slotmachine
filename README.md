@@ -171,7 +171,7 @@ His code for the reel animation is:
 ![Screenshot of Code Jos' spin animation function](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/CodJosScreenshot.png?raw=true)
 
 Function for the reel animation is:
-![Screenshot of reel spin animation]()
+![Screenshot of reel spin animation](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/SpinAnimationScreenshot.png?raw=true)
 
 The video I learned about the setTimeOut() method from is HowToCodeSchool's youtube tutorial: [How to delay javascript function call - HowToCodeSchool](https://www.youtube.com/watch?v=Gd3qyr9llwU)
 
@@ -179,7 +179,7 @@ Their code:
 ![Screenshot of HowToCodeSchool's code](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/HowToCodeSchoolScreenshot.png?raw=true)
 
 My code:
-![Screenshot of setTimeout html]()
+![Screenshot of setTimeout html](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/setTimeoutScreenshot.png?raw=true)
 
 The video I learned how to properly call a keyboard key with an Event Listener for increasing and decreasing the bet amount with the up and down keys was: [How to Interact With the Keyboard - dcode](https://youtu.be/Q3ktcptd2yI?si=qJsY55Xoz-6vomFQ)
 
@@ -187,7 +187,7 @@ Their code:
 ![Screenshot of dcode's code](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/dcodeScreenshot.png?raw=true)
 
 My code:
-![Screenshot of Keyboard Event Listener]()
+![Screenshot of Keyboard Event Listener](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/KeyboardListenerScreenshot.png?raw=true)
 
 ## **Conclusion**
 
