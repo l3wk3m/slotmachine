@@ -106,9 +106,9 @@ function wager(event) {
 
 function spin(event) {
 
-    for (i = 0; i < 3; i++)(
-        oldValue[i] = stopValue[i]
-    )
+    for (i = 0; i < 3; i++){
+        oldValue[i] = stopValue[i];
+    }
 
     for (i = 0; i < 3; i++) {
         newValue[i] = ((Math.round(Math.random() * 10)) % 9);
@@ -226,7 +226,7 @@ document.body.addEventListener('keydown', (ev) => {
             document.getElementById('bet-tally').innerHTML = bet;
         }
     }
-})
+});
 
 decrement.addEventListener('click', less);
 decrementTen.addEventListener('click', tenLess);
