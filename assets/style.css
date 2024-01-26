@@ -214,3 +214,28 @@ button {
 #restart-button {
     align-self: center;
 }
+
+/* Media query for laptop */
+@media screen and (min-width: 992px) {
+    footer {
+        height: 14.75rem;
+    }
+
+    #result {
+        bottom: 0px;
+    }
+}
+
+/* Media query for desktop */
+@media screen and (min-width: 1280px) {
+    #slot-machine {
+        height: 28rem;
+        width: 20rem;
+        padding: 2rem 0;
+        top: 0.25rem;
+    }
+
+    #result {
+        bottom: 0px;
+    }
+}
