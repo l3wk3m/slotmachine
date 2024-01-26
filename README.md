@@ -1,4 +1,4 @@
-#**Welcome to my JavaScript Slot Machine Project**
+# **Welcome to my JavaScript Slot Machine Project**
 
 ![Display of various UIs side-by-side](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/ScreensUI.jpg?raw=true)
 
@@ -22,7 +22,7 @@ I will address each of these goals across sections listed below:
 
 Thank you for taking the time to explore this project - I had a huge amount of fun building it!
 
-##**Ideal User Experience**
+## **Ideal User Experience**
 
 At the very beginning of this project I outlined what I thought the core user experience would be with the following flowchart:
 
@@ -40,7 +40,7 @@ The user should feel a sense of risk and a sense of thrill as the slot reels are
 
 If the user gets to a game over and is frustrated but excited enough to restart from 100 credits and go again then I've achieved what I set out to achieve.
 
-##**UI**
+## **UI**
 
 Pictured below is the wireframe I made with Balsamiq of how I first pictured the slot machine would look when completed:
 
@@ -68,7 +68,7 @@ For laptop and desktop devices, the bottom half of the page will still contain a
 
 Because the image used for the reels has a very specific pixel value which is used for the CSS transition animation, the size of the reels in pixels is unalterable. To this end, the game will only appear with its intended layout on devices with a width of 330px and greater. This covers all devices listed in dev tools and every device this was tested on but it still bears mentioning.
 
-##**Features & Their Development**
+## **Features & Their Development**
 
 Each of the three reels on the slot machine contains 9 icons each spaced out from one another by exactly 103 pixels. I generated the icons using openAI's Dall-E GPT, which returned the following image from my prompt:
 
@@ -102,13 +102,13 @@ The 'Spin' button executes the main slot machine mechanic. It instantly subtract
 
 ![Feature image of the spin button](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/Spin%20Feature.jpg?raw=true)
 
-##**Accessibility**
+## **Accessibility**
 
 For accessibility purposes, each of the buttons on the right hand side of the screen can be tabbed over, pressing spacebar to activate them. Each button has a "role" and an "aria-label" attribute for screen readers to call when tabbed onto.
 
 The JavaScript also has an Event Listener on the up and down arrows that will increment and decrement the bet amounts.
 
-##**Testing**
+## **Testing**
 
 Here I will touch briefly on the validator tests this has passed, then I will break down my testing process, the bugs I uncovered in the process and what steps I took to fix them.
 
@@ -141,7 +141,7 @@ This was everything I had accounted for and the version I deployed worked to the
 
 It became very clear very quickly that there was no substitution for lots of testing when it came to bug discovery and fixing. Using a large number of people to test this project is definitely going to be something I heavily incorporate into my workflow on future projects.
 
-##**External Code Credit**
+## **External Code Credit**
 
 I leaned on a couple of tutorials for bits of code in this project.
 
@@ -151,7 +151,7 @@ The video I learned about the setTimeOut() method from is HowToCodeSchool's yout
 
 The video I learned how to properly call a keyboard key with an Event Listener for increasing and decreasing the bet amount with the up and down keys was: [How to Interact With the Keyboard - dcode](https://youtu.be/Q3ktcptd2yI?si=qJsY55Xoz-6vomFQ)
 
-##**Conclusion**
+## **Conclusion**
 
 I'm extremely pleased with how this project has turned out.
 
