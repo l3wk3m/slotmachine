@@ -171,7 +171,8 @@ His code for the reel animation is:
 ![Screenshot of Code Jos' spin animation function](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/CodJosScreenshot.png?raw=true)
 
 Function for the reel animation is:
-`function spinAnimation(event) {
+`
+function spinAnimation(event) {
     reel1.style.transition = `background-position-y 4s cubic-bezier(.49,.04,.78,1.15)`;
     reel1.style.backgroundPositionY = `${((baseTransition) + (12 + (stopValue[0] * iconHeight) * (-1)))}px`;
 
@@ -182,7 +183,8 @@ Function for the reel animation is:
     reel3.style.backgroundPositionY = `${((baseTransition * 3) + (12 + (stopValue[2] * iconHeight) * (-1)))}px`;
 
     baseTransition += iconHeight * 27;
-}`
+}
+`
 
 The video I learned about the setTimeOut() method from is HowToCodeSchool's youtube tutorial: [How to delay javascript function call - HowToCodeSchool](https://www.youtube.com/watch?v=Gd3qyr9llwU)
 
@@ -190,7 +192,9 @@ Their code:
 ![Screenshot of HowToCodeSchool's code](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/HowToCodeSchoolScreenshot.png?raw=true)
 
 My code:
-`<button type="button" role="button" aria-label="Press this to spin" id="spin-button" onclick="setTimeout(wait, 8000)">SPIN</button>`
+`
+<button type="button" role="button" aria-label="Press this to spin" id="spin-button" onclick="setTimeout(wait, 8000)">SPIN</button>
+`
 
 The video I learned how to properly call a keyboard key with an Event Listener for increasing and decreasing the bet amount with the up and down keys was: [How to Interact With the Keyboard - dcode](https://youtu.be/Q3ktcptd2yI?si=qJsY55Xoz-6vomFQ)
 
@@ -198,7 +202,8 @@ Their code:
 ![Screenshot of dcode's code](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/dcodeScreenshot.png?raw=true)
 
 My code:
-`document.body.addEventListener('keydown', (ev) => {
+`
+document.body.addEventListener('keydown', (ev) => {
     if (ev.key == 'ArrowDown') {
         if (bet < 2) {
             alert("You have to bet something to play!");
@@ -207,7 +212,8 @@ My code:
             document.getElementById('bet-tally').innerHTML = bet;
         }
     }
-});`
+});
+`
 
 ## **Conclusion**
 
