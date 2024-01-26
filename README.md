@@ -1,16 +1,6 @@
-![Reel Image featuring all of the different fruits of the slot machine, which I created with ChatGPT and Photopea](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/SlotReelsMeasure.jpg?raw=true)
-
-
-
-
-
-
-
-![My final flowchart created at the end of the project detailing the final project game loop]()
-
-
-
 #**Welcome to my JavaScript Slot Machine Project**
+
+![Display of various UIs side-by-side](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/ScreensUI.jpg?raw=true)
 
 The purpose of this project is to create a fun and immersive slot machine game using only JavaScript, HTML and CSS and deploy it on a cloud based platform. My key goals are that the game be:
 
@@ -58,11 +48,15 @@ Pictured below is the wireframe I made with Balsamiq of how I first pictured the
 
 Here's how the UI looks on smartphones and tablets:
 
-![Smartphone and Tablet UI]()
+![Smartphone UI](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/phoneUI.png?raw=true)
+
+![Tablet UI](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/tabletUI.png?raw=true)
 
 And here's how it looks on laptop and desktop:
 
-![Laptop and Desktop UI]()
+![Laptop UI](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/laptopUI.png?raw=true)
+
+![Desktop UI](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/desktopUI.png?raw=true)
 
 When the user opens the page for the first time, populating the top half of the page they will see three vertical boxes, each containing matching icons and then an empty smaller horizontal box below them, while on the bottom half of the page there is the word 'Credit:' with the number 100 beside it, the word 'Bet:' with the number 10 beside it. To the right of these there are 4 button icons: a double up-arrow for incrementing the 'bet' value by 10, a single up-arrow for incrementing the 'bet' value by 1, a down-arrow to decrement the 'bet' value by 1, a double down-arrow for decrementing the 'bet' value by 10. To the right of them again, at the far side of the screen will be 3 buttons: a 'Restart' button for the event of getting a 'Game Over' game condition, an 'All In!' button to bet the total number of credits you have remaining on your next bet and, finally, the 'Spin' button.
 
@@ -86,7 +80,7 @@ I then brought this into photopea (a free browser-based Photoshop clone) to arra
 
 The top half of the screen also features the Result panel. This returns a message of whether you've won, won big or lost when the spin animation for the reels completes.
 
-![Results screen]()
+![Results screen](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/Result%20Feature.jpg?raw=true)
 
 The bottom half of the screen features the user-panel. The 'Credit' and 'Bet' amounts are handled using DOM navigation and manipulation from Event Listeners attached to the seven buttons on the user panel.
 
@@ -94,19 +88,19 @@ Clicking the up-arrow and the double up-arrow increase your bet amount by 1 and 
 
 Clicking the down-arrow and the double down-arrow will decrease your bet amount by 1 and 10 respectively. Your bet value will also decrease by using the down arrow on your keyboard.
 
-![Feature image of the arrows on the screen and their function]()
+![Feature image of the arrows on the screen](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/Buttons%20Feature.jpg?raw=true)
 
 The 'All-in!' button instantly sets your bet amount to equal the number of credits you have.
 
-![Feature image of the all in button and the credit and bet values equalling each other]()
+![Feature image of the all in button and the credit and bet values equalling each other](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/All%20In%20Feature.jpg?raw=true)
 
 The 'Restart' button gives you the chance to reset the game state back to the start.
 
-![Feature image of the reset button]()
+![Feature image of the reset button](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/Restart%20Feature.jpg?raw=true)
 
 The 'Spin' button executes the main slot machine mechanic. It instantly subtracts your Bet value from your Credit value, returning the result of that sum to update your Credit value with DOM manipulation. It then starts the spin animation which, once resolved, will either return you a reward equal to (Bet * 3) for matching 2 icons across the 3 reels and (Bet * 10) for matching all three reels. A message then gets pushed to the Result window letting the user know if they've won and the user's credit amount is updated appropriately
 
-![Feature image of the spin button and the reels spinning]()
+![Feature image of the spin button](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/Spin%20Feature.jpg?raw=true)
 
 ##**Accessibility**
 
