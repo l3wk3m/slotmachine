@@ -109,10 +109,30 @@ For accessibility purposes, each of the buttons on the right hand side of the sc
 The JavaScript also has an Event Listener on the up and down arrows that will increment and decrement the bet amounts.
 
 ## **Testing**
-
 Here I will touch briefly on the validator tests this has passed, then I will break down my testing process, the bugs I uncovered in the process and what steps I took to fix them.
 
-*Bugs*
+# **Validator Testing**
+The jshint JavaScript linter returns lots of warnings that 'let', 'const' and template literals were only concepts available from ES6 onwards. I'm okay with this.
+
+It also alerted me to two cases of a missing semicolon, which I corrected.
+
+Before:
+![jshint Before Fixes](assets/images/jshintBefore.png)
+After:
+![jshint After Fixes](assets/images/jshintAfter.png)
+
+The W3 HTML Validator returned mostly info messages about trailing / characters in some elements in the head. It also warned that giving a button element a role of button was redundant, but I'll keep that in for accessibility reasons.
+
+W3 HTML Validator:
+![W3 HTML Validator](assets/images/HTML Validator.png)
+
+The W3 CSS Validator returned: No error found.
+
+W3 CSS Validator
+![W3 CSS Validator](assets/images/CSS Validator.png)
+
+
+# **Bugs**
 I rolled out a githun page deployment of my project and shared it with friends, family, a work group chat and the Code Institue slack channel.
 
 Before I go into the bugs this research uncovered, I will briefly explain how I expected the program to work and what checks I had put in place for anticipated problems before deployment:
