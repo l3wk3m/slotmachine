@@ -31,7 +31,7 @@ let backgroundPositionY3 = parseFloat(reel3.style.backgroundPositionY);
 
 // Function for disabling the restart button in any scenario other than a game over
 function restartDisable() {
-    if(bet === credit && credit === 0){
+    if (bet === credit && credit === 0) {
         restartButton.disabled = (false);
     } else {
         restartButton.disabled = (true);
@@ -39,7 +39,7 @@ function restartDisable() {
 }
 
 // Function to set the credit and bet values back to their starting position
-function restart(event){
+function restart(event) {
     credit = 100;
     document.getElementById('credit-counter').innerHTML = credit;
     bet = 10;
@@ -59,7 +59,7 @@ function more(event) {
     }
 }
 
-function tenMore(event){
+function tenMore(event) {
     if (bet > (credit - 10)) {
         alert("Your bet amount can't exceed your credits!");
     } else {
@@ -98,23 +98,23 @@ function allIn(event) {
 
 // Code for storing and updating credit values and pushing
 function wager(event) {
-        credit = credit - bet;
-        document.getElementById('credit-counter').innerHTML = credit;
+    credit = credit - bet;
+    document.getElementById('credit-counter').innerHTML = credit;
 }
 
 // Slot machine spin result code
 
 function spin(event) {
-   
-    for (i = 0; i < 3; i++) (
+
+    for (i = 0; i < 3; i++)(
         oldValue[i] = stopValue[i]
     )
-    
+
     for (i = 0; i < 3; i++) {
         newValue[i] = ((Math.round(Math.random() * 10)) % 9);
         stopValue.splice(i, 1, newValue[i]);
     }
-   
+
     for (i = 0; i < 3; i++) {
         stopPosition.splice(i, 1, reel[stopValue[i]]);
     }
@@ -124,7 +124,7 @@ function spin(event) {
 // Using template literals to create and update the transitions (as well as some UI stuff) in the CSS 
 // was taken from the following tutorial: https://www.youtube.com/watch?v=boI2B4Gpp34
 
-function spinAnimation (event) {
+function spinAnimation(event) {
     reel1.style.transition = `background-position-y 4s cubic-bezier(.49,.04,.78,1.15)`;
     reel1.style.backgroundPositionY = `${((baseTransition) + (12 + (stopValue[0] * iconHeight) * (-1)))}px`;
 
@@ -135,23 +135,23 @@ function spinAnimation (event) {
     reel3.style.backgroundPositionY = `${((baseTransition * 3) + (12 + (stopValue[2] * iconHeight) * (-1)))}px`;
 
     baseTransition += iconHeight * 27;
-  }
+}
 
 // Win Condition Code
 
-function winCheck(){
+function winCheck() {
     if (stopPosition[0] === stopPosition[1] && stopPosition[1] === stopPosition[2]) {
-      result.innerHTML = '!!!YOU WIN BIG!!!';
-      credit = credit + (bet * 10);
-      document.getElementById('credit-counter').innerHTML = credit;
-      //Might be worth considering moving the DOM method to update with the winnings until after the result appears
-  } else if (stopPosition[0] === stopPosition[1] || stopPosition[1] === stopPosition[2] || stopPosition[0] === stopPosition[2]) {
-      result.innerHTML = 'You win!';
-      credit = credit + (bet * 3);
-      document.getElementById('credit-counter').innerHTML = credit;
-} else {
-      result.innerHTML = 'Hard luck - try again!';
-}
+        result.innerHTML = '!!!YOU WIN BIG!!!';
+        credit = credit + (bet * 10);
+        document.getElementById('credit-counter').innerHTML = credit;
+        //Might be worth considering moving the DOM method to update with the winnings until after the result appears
+    } else if (stopPosition[0] === stopPosition[1] || stopPosition[1] === stopPosition[2] || stopPosition[0] === stopPosition[2]) {
+        result.innerHTML = 'You win!';
+        credit = credit + (bet * 3);
+        document.getElementById('credit-counter').innerHTML = credit;
+    } else {
+        result.innerHTML = 'Hard luck - try again!';
+    }
 }
 
 function loseCheck() {
@@ -165,35 +165,37 @@ function loseCheck() {
 }
 
 // Function to disable the button while the reels are spinning 
-function tempDisable(event){
+function tempDisable(event) {
     spinButton.disabled = (true);
     allInButton.disabled = (true);
     restartButton.disabled = (true);
 }
 
-function tempDisableKey(){
+function tempDisableKey() {
     spinButton.disabled = (true);
 }
 
 // Function to reenable the spin button when spin is finished
 // (providing you haven't gotten a Game Over)
-function reEnable(){
+function reEnable() {
     spinButton.disabled = (false);
     allInButton.disabled = (false);
 }
 
 // Function to reset your Bet value to below your Credit value if it ends up above it
 
-function resetBigBet(){
+function resetBigBet() {
     if (bet > credit) {
         bet = bet - (bet - credit);
         document.getElementById('bet-tally').innerHTML = bet;
-        if (bet === credit && credit === 0){
+        if (bet === credit && credit === 0) {
             spinButton.disabled = (true);
         } else {
             reEnable();
         }
-    } else {reEnable();}
+    } else {
+        reEnable();
+    }
 }
 
 // Bet change event listeners
@@ -216,14 +218,14 @@ incrementTen.addEventListener('click', tenMore);
 
 // Keydown for down arrow = decrement bet
 document.body.addEventListener('keydown', (ev) => {
-        if (ev.key == 'ArrowDown') {
-            if (bet < 2) {
-                alert("You have to bet something to play!");
-            } else {
-                bet -= 1;
-                document.getElementById('bet-tally').innerHTML = bet;
-            }
+    if (ev.key == 'ArrowDown') {
+        if (bet < 2) {
+            alert("You have to bet something to play!");
+        } else {
+            bet -= 1;
+            document.getElementById('bet-tally').innerHTML = bet;
         }
+    }
 })
 
 decrement.addEventListener('click', less);
@@ -235,7 +237,7 @@ spinButton.addEventListener('click', spinAnimation);
 spinButton.addEventListener('click', tempDisable);
 // Function that will wait for the result of the reels before informing the user / updating the credit score
 // Taken from HowToCodeSchool's YT channel: https://youtu.be/Gd3qyr9llwU?si=tcbXNtzFXrA3wV3-
-function wait(){
+function wait() {
     winCheck();
     loseCheck();
     resetBigBet();

@@ -5,59 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Meta tags for search engines -->
-    <meta
-      name="description"
-      content="A Slot Machine, coded in HTML, CSS and JavaScript for your enjoyment!"
-    />
-    <meta
-      name="keywords"
-      content="javascript, slots, slotmachine, game, html, css"
-    />
+    <meta name="description" content="A Slot Machine, coded in HTML, CSS and JavaScript for your enjoyment!" />
+    <meta name="keywords" content="javascript, slots, slotmachine, game, html, css" />
     <!-- Title -->
     <title>JavaScript Slot Machine</title>
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/styles/style.css" />
   </head>
-
   <body>
-  <!-- Main Slots Display Window -->
+    <!-- Main Slots Display Window -->
     <div id="main-body">
       <div id="slot-machine">
-
         <div id="reels">
           <div class="reel" id="reel1"></div>
           <div class="reel" id="reel2"></div>
           <div class="reel" id="reel3"></div>
         </div>
-
         <div id="result"></div>
-        
       </div>
     </div>
     <!-- Control Panel -  All of the users controls for the slot machine -->
     <footer>
       <div>
-        <h1 id="credits">Credits: <span id="credit-counter">100</span></h1>
+        <h1 id="credits">Credits: <span id="credit-counter">100</span>
+        </h1>
       </div>
       <div id="bet">
         <div>
-
-          <h2 id="bet-number">Bet: <span id="bet-tally">10</span></h2>
+          <h2 id="bet-number">Bet: <span id="bet-tally">10</span>
+          </h2>
         </div>
         <div id="more-or-less">
-          <div id="ten-more"><i class="fa-solid fa-angles-up"></i></div>
-          <div id="more"><i class="fa-solid fa-angle-up"></i></div>
-          <div id="less"><i class="fa-solid fa-angle-down"></i></div>
-          <div id="ten-less"><i class="fa-solid fa-angles-down"></i></div>
+          <div id="ten-more">
+            <i class="fa-solid fa-angles-up"></i>
+          </div>
+          <div id="more">
+            <i class="fa-solid fa-angle-up"></i>
+          </div>
+          <div id="less">
+            <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div id="ten-less">
+            <i class="fa-solid fa-angles-down"></i>
+          </div>
         </div>
         <div id="buttons">
-        <button type="button" role="button" aria-label="Press this to restart" id="restart-button">Restart</button>
-        <button type="button" role="button" aria-label="Press this to bet all your credits" id="all-in">All in!</button>
-        <button type="button" role="button" aria-label="Press this to spin" id="spin-button" onclick="setTimeout(wait, 8000)">SPIN</button>
+          <button type="button" role="button" aria-label="Press this to restart" id="restart-button">Restart</button>
+          <button type="button" role="button" aria-label="Press this to bet all your credits" id="all-in">All in!</button>
+          <button type="button" role="button" aria-label="Press this to spin" id="spin-button" onclick="setTimeout(wait, 8000)">SPIN</button>
         </div>
       </div>
     </footer>
-
     <script src="https://kit.fontawesome.com/2f87d5a80a.js" crossorigin="anonymous"></script>
     <script src="assets/scripts/slots.js"></script>
   </body>
