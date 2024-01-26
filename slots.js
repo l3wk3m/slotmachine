@@ -147,6 +147,8 @@ function spinKey() {
 */
 
 // Slot machine spin animation
+// Using template literals to create and update the transitions (as well as some UI stuff) in the CSS 
+// was taken from the following tutorial: https://www.youtube.com/watch?v=boI2B4Gpp34
 
 function spinAnimation (event) {
     reel1.style.transition = `background-position-y 4s cubic-bezier(.49,.04,.78,1.15)`;

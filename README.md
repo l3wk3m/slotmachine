@@ -4,7 +4,7 @@
 
 ![Editing Process of the reel using the online image editor Photopea](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/Editing%20in%20photopea.png?raw=true)
 
-![My first flowchart created at the beginning of this project, outlining what I hoped the game loop would be]()
+
 
 ![My final flowchart created at the end of the project detailing the final project game loop]()
 
@@ -25,6 +25,22 @@ The appeal of a slots game is that the desired outcome is immediately intuitive 
 The aim of the game is to keep going until you're completely out of credits. There is no ultimate win condition with a gambling game like this.
 
 **Ideal User Experience**
+
+In the beginning of the project I outlined what I thought the core user experience would be with the following flowchart:
+
+![My first flowchart created at the beginning of this project, outlining what I hoped the game loop would be](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/Slot%20Machine%20Game%20Loop%20Flowchart.png?raw=true)
+
+Although I believe I did capture the core gameplay loop here very succinctly, there is a lot of devil in the detail of the various ways someone can choose the amount they want to bet.
+
+There are four buttons for increasing and decreasing the bet amounts (you can also use the arrow keys to this end) and then one button for going all in (betting the full amount of credits you currently have).
+
+When the user has chosen their bet amount, they click spin and the slot animation starts. The user needs to wait until the spin finishes before they find out whether they've won or lost.
+
+This was done intentionally to build suspense, and bezier curves were used for the transition timing to increase that sense of anticipation as the reel begins to slow down. At the end of the slow there is a slight overshoot, past the desired value to add some additional suspense.
+
+The user should feel a sense of risk and a sense of thrill as the slot reels are turning, which should resolve to either a sense of satisfaction and reward for matching two icons, a greater sense of reward for matching all 3 icons or a sense of disappointment for matching no icons and losing their bet amount.
+
+If the user gets to a game over and is frustrated but excited enough to restart from 100 credits and go again then I've achieved what I set out to achieve.
 
 **UI**
 
@@ -47,5 +63,32 @@ The JavaScript also has an Event Listener on the up and down arrows that will in
 
 **Testing**
 
-Here I will touch briefly on the validator tests this
+Here I will touch briefly on the validator tests this has passed, then I will break down my testing process, the bugs I uncovered in the process and what steps I took to fix them.
+
+*Bugs*
+I rolled out a githun page deployment of my project and shared it with friends, family, a work group chat and the Code Institue slack channel.
+
+Before I go into the bugs this research uncovered, I will briefly explain how I expected the program to work and what I had accounted for:
+
+1. Clicking spin deducts your bet amount from your credit amount and starts the reel spinning animation.
+
+2. Each reel lands on a value generated with the Math.random() method.
+
+3. You can click the up or down arrows to increase or decrease your bet amount.
+
+4. Your bet value can not be increased above your credit value or decreased below 1 - betting negative values is not permitted, betting more than you have is not permitted.
+
+This was everything I had accounted for and the version I deployed worked to these principals. The bugs discovered when I rolled the deployment for testing and their solutions were as follows:
+
+1. You can spin multiple times before the first spin resolves and bet as much as you like before your credits are effected by the result of the first spin
+
+*Solution*: Write a function that disables the 'Spin' button until the animation ends and the result is returned. Include a method to re-enable the button that will be called, so long as you have not met the game's lose conditions.
+
+2. Bet amounts exceding credit amounts - Although the arrow keys are set up so that you can't go above your credit amount or below 1, if you bet more than half your pot and lose your bet amount, you bet will then be at a value
+
+*Solution*: Write a function called resetBigBet which sets your bet amount = to your credit amount for after your spin resolves. If you bet everything and the resetBigBet sets your bet amount == 0, meaning your credit amount == 0, then it returns a game over state.
+
+3. Clicking 'All In' while the reels are spinning, after you've just bet everything, sets the 'Bet' and 'Credit' values both to zero before the spin finishes, returning a Game Over state when the spin is done (even if you won the spin)
+
+*Solution*: Write a function that disables the 'All In' button while the reels are in motion, that gets re-enabled when the spin is done and you have your result.
 
