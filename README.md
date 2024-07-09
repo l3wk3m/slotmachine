@@ -10,7 +10,7 @@ The purpose of this project is to create a fun and immersive slot machine game u
 
 and then the final goal of the project at large is
 
-4. The I develop and test a simple working JavaScript application that use DOM manipulation to give the user a satisfying in-browser gaming experience 
+4. Develop and test a simple working JavaScript application that use DOM manipulation to give the user a satisfying in-browser gaming experience 
 
 I will address each of these goals across sections listed below:
 
