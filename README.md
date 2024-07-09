@@ -112,7 +112,7 @@ The JavaScript also has an Event Listener on the up and down arrows that will in
 Here I will touch briefly on the validator tests this has passed, then I will break down my testing process, the bugs I uncovered in the process and what steps I took to fix them.
 
 # **Validator Testing**
-**Lighthouse Test**
+## **Lighthouse Test**
 Below is a screenshot of the lighthouse test of my app:
 ![Lighthouse Test Result](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/Lighthouse%20Test.png?raw=true)
 
@@ -122,7 +122,7 @@ As you can see I only scored an 81 on performance. This delay seems mostly down 
 
 As I can't compromise on the type or size of the image at this point, I will not be ammending this at this stage.
 
-**Jshint**
+## **Jshint**
 The jshint JavaScript linter returns lots of warnings that 'let', 'const' and template literals were only concepts available from ES6 onwards. I'm okay with this.
 
 It also alerted me to two cases of a missing semicolon, which I corrected.
@@ -132,17 +132,47 @@ Before:
 After:
 ![jshint After Fixes](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/jshintAfter.png?raw=true)
 
-**W3 HTML Validator**
+## **W3 HTML Validator**
 The W3 HTML Validator returned mostly info messages about trailing / characters in some elements in the head. It also warned that giving a button element a role of button was redundant, but I'll keep that in for accessibility reasons.
 
 W3 HTML Validator:
 ![W3 HTML Validator](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/HTML%20Validator.png?raw=true)
 
-**W3 CSS Validator**
+## **W3 CSS Validator**
 The W3 CSS Validator returned: No error found.
 
 W3 CSS Validator
 ![W3 CSS Validator](https://github.com/l3wk3m/slotmachine/blob/main/assets/images/CSS%20Validator.png?raw=true)
+
+
+# **Deployment**
+
+## Deploying on GitHub pages
+The website was deployed using GitHub Pages by following these steps:
+1. In the GitHub repository navigate to the Settings tab.
+2. On the left hand menu select Pages.
+3. For the source select Branch: main
+4. Once saved, GitHub will refresh and your website will be published from GitHub repository.
+5. The link to your published website will appear: "Your site is live at https://l3wk3m.github.io/slotmachine/".
+
+
+## Local Development
+
+### How to Fork
+ To fork the project repository you can follow these steps:
+ 1. Navigate to project GitHub repository [Slotmachine - l3wk3m](https://github.com/l3wk3m/slotmachine).
+ 2. Navigate to upper right hand corner to "fork" section button and click on it.
+
+ 
+ ### How to Clone
+
+1. Go to the GitHub repository.
+2. Locate the Code button above the list of files and click it.
+3. Highlight the "HTTPS" button to clone with HTTPS and copy the link.
+4. Open Git Bash.
+5. Change the current working directory to the one where you want the cloned directory.
+6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY).
+7. Press Enter to create your local clone.
 
 
 # **Bugs**
