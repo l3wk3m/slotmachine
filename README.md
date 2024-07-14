@@ -68,6 +68,14 @@ For laptop and desktop devices, the bottom half of the page will still contain a
 
 Because the image used for the reels has a very specific pixel value which is used for the CSS transition animation, the size of the reels in pixels is unalterable. To this end, the game will only appear with its intended layout on devices with a width of 330px and greater. This covers all devices listed in dev tools and every device this was tested on but it still bears mentioning.
 
+### **Design**
+
+The core design principle that guided my design decisions was 'simplicity and accessibility'.
+
+When it came to **font** selection I chose the Google Font Dosis for its simple and stripped back appearance.
+
+A lot of work went into deciding on particular saturation-heavy colours for the reel icons. Since these icons cover a wide range of the colour spectrum and are deep hues of varying colours on the spectrum, I decided on a simple grey/white colour sccheme for the UI. This helped me adhere to my 'simplicity' design value, and having stripped back colours for the UI really helped the reel icons to pop and stand out on the dispay.
+
 ## **Features & Their Development**
 
 Each of the three reels on the slot machine contains 9 icons each spaced out from one another by exactly 103 pixels. I generated the icons using openAI's Dall-E GPT, which returned the following image from my prompt:
@@ -175,10 +183,17 @@ The website was deployed using GitHub Pages by following these steps:
 7. Press Enter to create your local clone.
 
 
-# **Bugs**
-I rolled out a githun page deployment of my project and shared it with friends, family, a work group chat and the Code Institue slack channel. Below are the bugs I came across throughout the deployment testing phase.
+# **Testing & Bugs**
+I rolled out a github page deployment of my project and shared it with friends, family, a work group chat and the Code Institue slack channel. Below are the bugs I came across throughout the deployment testing phase.
 
 Before I go into the bugs this research uncovered, I will briefly explain how I expected the program to work and what checks I had put in place for anticipated problems before deployment:
+
+|Feature|Action|Expected result|Actual result|
+|---|---|---|---|
+The DOM is updated with your new credit amount after 'Spin' is clicked|The 'Spin' Button is clicked|Clicking 'Spin' deducts your bet amount from your credit amount and starts the reel spinning animation|Works as expected|
+Each reel spins a random number of times|The 'Spin' Button is clicked|Each reel will spin a different number of times to any adjacent reel and the number of spins will vary on each spin|Works as expected|
+Change your bet amount|The up or down arrows are clicked / up or down is pressed on the keyboard|The bet amount will change when either up or down is pressed / clicked|Works as expected|
+You cannot bet more credits than you have or less than zero|The up arrow is clicked when your bet amount matches your credit amount or the down arrow is clicked when you are at a bet amount of 1|A pop-up message will appear to tell you you can't exceed your bet amount|Works as expected|
 
 1. Clicking spin deducts your bet amount from your credit amount and starts the reel spinning animation.
 
