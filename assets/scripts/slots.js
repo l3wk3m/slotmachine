@@ -106,16 +106,16 @@ function wager(event) {
 
 function spin(event) {
 
-    for (i = 0; i < 3; i++){
+    for (let i = 0; i < 3; i++){
         oldValue[i] = stopValue[i];
     }
 
-    for (i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         newValue[i] = ((Math.round(Math.random() * 10)) % 9);
         stopValue.splice(i, 1, newValue[i]);
     }
 
-    for (i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         stopPosition.splice(i, 1, reel[stopValue[i]]);
     }
 }
