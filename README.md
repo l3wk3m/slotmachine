@@ -195,15 +195,7 @@ Each reel spins a random number of times|The 'Spin' Button is clicked|Each reel 
 Change your bet amount|The up or down arrows are clicked / up or down is pressed on the keyboard|The bet amount will change when either up or down is pressed / clicked|Works as expected|
 You cannot bet more credits than you have or less than zero|The up arrow is clicked when your bet amount matches your credit amount or the down arrow is clicked when you are at a bet amount of 1|A pop-up message will appear to tell you you can't exceed your bet amount|Works as expected|
 
-1. Clicking spin deducts your bet amount from your credit amount and starts the reel spinning animation.
-
-2. Each reel lands on a value generated with the Math.random() method.
-
-3. You can click the up or down arrows to increase or decrease your bet amount.
-
-4. Your bet value can not be increased above your credit value or decreased below 1 - betting negative values is not permitted, betting more than you have is not permitted.
-
-This was everything I had accounted for and the version I deployed worked to these principals. The bugs discovered when I rolled the deployment for testing and their solutions were as follows:
+This was everything I had accounted for and the version I deployed worked to these principals. However, certain fringe-case bugs were dsicovered throughout the development process. These bugs discovered when I rolled the deployment for testing and their solutions were as follows:
 
 1. You can spin multiple times before the first spin resolves and bet as much as you like before your credits are effected by the result of the first spin
 
