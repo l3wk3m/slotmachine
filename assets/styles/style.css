@@ -221,7 +221,7 @@ footer {
   }
 
   #result {
-    bottom: 0px;
+    bottom: 50%;
   }
 }
 

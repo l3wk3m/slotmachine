@@ -182,6 +182,7 @@ The website was deployed using GitHub Pages by following these steps:
 6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY).
 7. Press Enter to create your local clone.
 
+The live link can be found here - [Slotmachine - Github Pages Live Deployment](https://l3wk3m.github.io/slotmachine/)
 
 # **Testing & Bugs**
 I rolled out a github page deployment of my project and shared it with friends, family, a work group chat and the Code Institue slack channel. Below are the bugs I came across throughout the deployment testing phase.
